@@ -17,6 +17,39 @@ mysqli_set_charset($db,"utf8");
 </head>
 <body>
 
+<!-----------------------------------Test_Menu------------------------->
+<nav class='menu' tabindex='0'>
+    <div class='smartphone-menu-trigger'></div>
+    <header class='avatar'>
+            <img src='Contact/Image/Admin.png' onclick='myFunction()' class='dropbtn'/><br><br>
+    </header>
+    <ul>
+        <a href='?Dashboard'>
+            <div class='P_I'><i class=\"fal fa-tachometer-alt \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;داشبورد</span>
+            </div>
+        </a>
+        <a href='?Admin'>
+            <div class='P_I'><i class=\"fal fa-user-cog \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;ادمین ها</span>
+            </div>
+        </a>
+        <a href='?Teachers'>
+            <div class='P_I'><i class=\"fal fa-user-tie \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;&nbsp;دبیران</span>
+            </div>
+        </a>
+        <a href='?Students'>
+            <div class='P_I'><i class=\"fal fa-user-graduate \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;&nbsp;دانش آموزان</span>
+            </div>
+        </a>
+    </ul>
+</nav>
+<main>
+    <div class='helper'>
+
+    </div>
+</main>
+<!-----------------------------------Test_Menu------------------------->
+
+
 <!-----------------------------------MassageBox_Result------------------------->
 <div id="Result_Box" class="alert-info"><p class="alert-link" id="Result_Tex"></p></div>
 <!-----------------------------------MassageBox_Result------------------------->
@@ -98,7 +131,7 @@ mysqli_set_charset($db,"utf8");
                 <tr id="Td_Table">
                     <?php
                         global $db;
-                        $qr="SELECT * FROM tables";
+                        $qr="SELECT * FROM Student";
                         $rs1=mysqli_query($db, $qr);
                         while ($row=mysqli_fetch_array($rs1))
                         {
