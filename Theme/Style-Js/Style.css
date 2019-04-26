@@ -1,0 +1,67 @@
+@font-face {
+    font-family: ur;
+    src: url("../Font/ur.ttf");
+}
+body{
+    font-family: ur;
+    background-image: url("../../Contact/Image/Bg-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Window1{
+    border: 1px solid black;
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    direction: rtl;
+    text-align: right;
+}
+
+.Window2{
+    border: 1px solid black;
+    padding: 10px;
+    width: 950px;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    text-align: right;
+}
+
+.Window3{
+    border: 1px solid black;
+    padding: 10px;
+    width: 900px;
+    border-radius: 10px;
+    background-color: white;
+}
+.textarea{
+    resize: none;
+    margin-right: 7px;
+}
+
+#lable1{margin-right: 6%}
+#lable2{margin-right: 10%}
+#lable3{margin-right: 8%}
+#lable4{margin-right: 11%}
+#lable5{margin-right: 9%}
+#lable6{margin-right: 2%}
+#lable6{margin-right: 7%}
+
+#Result_Box{
+    width: 300px;
+    height: 50px;
+    border-radius: 0px 0px 5px 5px;
+    position: fixed;
+    left: 40%;
+    top: -80px;
+}
+#Result_Tex{
+    text-align: center;
+    padding-top: 5%;
+}
+@keyframes Result_Box {
+    to{
+        top: 1px;
+    }
+}
