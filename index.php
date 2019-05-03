@@ -1,6 +1,28 @@
 <?php
-$db=mysqli_connect("localhost","root","","test");
-mysqli_set_charset($db,"utf8");
+session_start();
+if (isset($_REQUEST['Log-Out']))
+{
+    session_destroy();
+}
+require_once "Function/Function.php";
+if (file_exists("Function/Config.php")) {
+    if (file_exists("Install")) {
+        Delete_Folder("Install");
+    }
+}else{
+     header('Location: Install/Install.php');
+}
+if (isset($_POST['Admins_Submit']))
+{
+    $_SESSION["Login"]="True";
+    $User=$_POST['Admins_User'];
+    $Pass=$_POST['Admins_Pass'];
+/*    $dbs_c=Connect_DB("Yes");
+    global $DB_Table;
+    $qr="SELECT UserName FROM "."$DB_Table"."_admin WHERE id=MAX(id)";
+    $rsl=mysqli_query($dbs_c, $qr);
+    echo ($rsl."s");*/
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,171 +35,45 @@ mysqli_set_charset($db,"utf8");
     <script src="Theme/Freamwork/bootstrap.min.js"></script>
     <script src="Theme/Style-Js/Script.js"></script>
     <link rel="stylesheet" href="Theme/Style-Js/Style.css">
-    <title>Document</title>
+    <title>پنل</title>
 </head>
-<body>
-
-<!-----------------------------------Test_Menu------------------------->
-<nav class='menu' tabindex='0'>
-    <div class='smartphone-menu-trigger'></div>
-    <header class='avatar'>
-            <img src='Contact/Image/Admin.png' onclick='myFunction()' class='dropbtn'/><br><br>
-    </header>
-    <ul>
-        <a href='?Dashboard'>
-            <div class='P_I'><i class=\"fal fa-tachometer-alt \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;داشبورد</span>
-            </div>
-        </a>
-        <a href='?Admin'>
-            <div class='P_I'><i class=\"fal fa-user-cog \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;ادمین ها</span>
-            </div>
-        </a>
-        <a href='?Teachers'>
-            <div class='P_I'><i class=\"fal fa-user-tie \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;&nbsp;دبیران</span>
-            </div>
-        </a>
-        <a href='?Students'>
-            <div class='P_I'><i class=\"fal fa-user-graduate \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;&nbsp;دانش آموزان</span>
-            </div>
-        </a>
-    </ul>
-</nav>
-<main>
-    <div class='helper'>
-
+<body background="Contact/Image/Bg-1.jpg">
+<?php
+if (isset($_SESSION['Login']))
+{
+    echo(Panel_A());
+}else{
+    echo"
+    <div align='center' id='L_Form'>
+        <div id='Login_Form' align='center'>
+            <div id='Header_Login'>ورود ادمین</div>
+            <br>
+            <img src='Contact/Image/Logo.png' alt='' id='Logo'>
+            <br>
+            <form action='#' method='post'>
+                <div class='form-group'>
+                    <label for='Admins_User' class='control-label'>نام کاربری</label>
+                    <div class='col-sm-11'>
+                       <input type='text' class='form-control' id='Admins_User'  name='Admins_User' required dir='ltr'>
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <label for='Admins_Pass' class='control-label'>گذرواژه</label>
+                    <div class='col-sm-11'>
+                        <input type='password' class='form-control' id='Admins_Pass'  name='Admins_Pass'  required dir='ltr'>
+                     </div>
+                </div>
+                <br>
+                <input type='submit' value='ورود' class='btn btn-info' id='Admins_Submit' name='Admins_Submit'>
+            </form>
+        </div>
     </div>
-</main>
-<!-----------------------------------Test_Menu------------------------->
-
-
+    ";
+}
+?>
 <!-----------------------------------MassageBox_Result------------------------->
 <div id="Result_Box" class="alert-info"><p class="alert-link" id="Result_Tex"></p></div>
 <!-----------------------------------MassageBox_Result------------------------->
-<!-----------------------------------Single_Insert------------------------->
-    <form action="" method="post" class="Window1" id="Form1">
-        <label for="Name1">نام :</label>
-        <input type="text" id="Name1" name="Name1">
-
-        <br><br>
-        <label for="Family1">نام خانوادگی :</label>
-        <input type="text" id="Family1" name="Family1">
-
-        <br><br>
-
-        <label for="FatherName1">نام پدر :</label>
-        <input type="text" id="FatherName1" name="FatherName1">
-
-        <br><br>
-
-        <label for="Expertise1">رشته :</label>
-        <input type="text" id="Expertise1" name="Expertise1">
-
-        <br><br>
-
-        <label for="BirthDay1">تاریخ تولد :</label>
-        <input type="date" id="BirthDay1" name="BirthDay1" >
-
-        <br><br>
-
-        <label for="Phone1">تلفن :</label>
-        <input type="text" id="Phone1" name="Phone1" dir="ltr">
-
-        <br><br>
-
-        <label for="Address1">آدرس :</label>
-        <input type="text" id="Address1" name="Address1">
-
-        <br><br>
-        <input type="submit" value="ثبت" id="Send1" name="Send1" class="btn btn-primary">
-    </form>
-    <br>
-<!-----------------------------------Single_Insert------------------------->
-<!-----------------------------------Multi_Insert------------------------->
-    <form action="#" method="post" dir="rtl" class="Window2" id="Form2">
-
-        <label for="Name2" id="lable1">نام</label>
-        <label for="Family2" id="lable2">نام خانوادگی</label>
-        <label for="FatherName2" id="lable3">نام پدر</label>
-        <label for="Expertise2" id="lable4">رشته</label>
-        <label for="Phone2" id="lable4">نلفن</label>
-        <label for="BirthDay2" id="lable5">تاریخ تولد</label>
-        <label for="Address2" id="lable6">آدرس منزل</label>
-        <br>
-        <textarea name="Name2" id="Name2" cols="10" rows="20" class="textarea input-sm"></textarea>
-        <textarea name="Family2" id="Family2" cols="10" rows="20" class="textarea input-sm"></textarea>
-        <textarea name="FatherName2" id="FatherName2" cols="10" rows="20" class="textarea input-sm"></textarea>
-        <textarea name="Expertise2" id="Expertise2" cols="10" rows="20" class="textarea input-sm"></textarea>
-        <textarea name="Phone2" id="Phone2" cols="10" rows="20" class="textarea input-sm" dir="ltr"></textarea>
-        <textarea name="BirthDay2" id="BirthDay2" cols="10" rows="20" class="textarea input-sm" dir="ltr"></textarea>
-        <textarea name="Address2" id="Address2" cols="10" rows="20" class="textarea input-sm"></textarea>
-        <br>
-        <input type="submit" value="ثبت" id="Send2" name="Send2" class="btn btn-primary">
-    </form>
-    <br>
-<!-----------------------------------Multi_Insert------------------------->
-<!-----------------------------------Show_Data------------------------->
-    <div class="Window3">
-            <table class='table table-striped table-bordered' style='text-align: center' dir='rtl' id="Table_Data">
-                <tr>
-                    <th>نام</th>
-                    <th>نام خانوادگی</th>
-                    <th>نام پدر</th>
-                    <th>رشته</th>
-                    <th>تاریخ تولد</th>
-                    <th>تلفن</th>
-                    <th>آدرس</th>
-                    <th colspan='2'>تغییرات</th>
-                </tr>
-                <tr id="Td_Table">
-                    <?php
-                        global $db;
-                        $qr="SELECT * FROM Student";
-                        $rs1=mysqli_query($db, $qr);
-                        while ($row=mysqli_fetch_array($rs1))
-                        {
-                            echo "<td>".$row['Name']."</td>";
-                            echo "<td>".$row['Family']."</td>";
-                            echo "<td>".$row['FatherName']."</td>";
-                            echo "<td>".$row['Expertise']."</td>";
-                            echo "<td>".$row['BirthDay']."</td>";
-                            echo "<td>".$row['Phone']."</td>";
-                            echo "<td>".$row['Address']."</td>";
-                            echo "<td>"."<button type='button' class='btn Delete' id='".$row['id']."'>Delete</button>"."</td>";
-                            echo "<td>"."<button type='button' class='btn myBtn Update' id='".$row['id']."'>Update</button>"."</td>";
-                            echo "</tr>";
-                        }
-                    ?>
-
-                </tr>
-            </table>
-    </div>
-    <br>
-<!-----------------------------------Show_Data---------------------------------------------->
-<!----------------------------------------Multi_Update------------------------------------->
-    <form method="post" class="Window1" id="Form4">
-        <label for="Now_Expertises">پارامتر فعلی:</label>
-        <select id="Now_Expertises">
-
-        </select>
-        <br>
-        <label for="New_Expertises">پارامتر جدید:</label>
-        <input type="text" id="New_Expertises" name="New_Expertises">
-        <br>
-        <input type="submit" class="btn btn-info" value="تغییر" id="Send4" name="Send4">
-    </form>
-    <br>
-<!----------------------------------------Multi_Update------------------------------------->
-<!----------------------------------------Multi_Delete------------------------------------->
-    <form method="post" class="Window1" id="Form5">
-        <label for="Group_Delete">کدام گروه : </label>
-        <select id="Group_Delete">
-
-        </select>
-        <br>
-        <input type="submit" class="btn btn-info" value="پاک کردن گروه" id="Send5" name="Send5">
-    </form>
-<!----------------------------------------Multi_Delete------------------------------------->
-<!-----------------------------------Modal_Single_Update---------------------------------------------->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->

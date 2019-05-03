@@ -4,9 +4,9 @@
 }
 body{
     font-family: ur;
-    background-image: url("../../Contact/Image/Bg-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .Window1{
@@ -17,7 +17,8 @@ body{
     background-color: antiquewhite;
     direction: rtl;
     text-align: right;
-    display: none;
+    margin-left: 550px;
+    margin-top: 10px;
 }
 
 .Window2{
@@ -27,22 +28,59 @@ body{
     border-radius: 10px;
     background-color: antiquewhite;
     text-align: right;
-    display: none;
+    margin-left: 310px;
+
 }
 
 .Window3{
     border: 1px solid black;
     padding: 10px;
-    width: 900px;
+    width: 1000px;
     border-radius: 10px;
     background-color: white;
-
+    margin-left: 22%;
+    margin-top: 50px;
 }
 .textarea{
     resize: none;
     margin-right: 7px;
 }
 
+#Install_Window{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 820px;
+    margin-left: 22%;
+    margin-top: 5%;
+    min-height: 520px;
+    background-color: #f8f9fa;
+    opacity: 0.9;
+    direction: rtl;
+}
+
+#Name_DB{
+    margin-right: 49px;
+}
+#UserName_DB{
+    margin-right: 5px;
+}
+#Password_DB{
+    margin-right: 13px;
+}
+#Host_DB{
+    margin-right: 25px;
+}
+#Table_DB{
+    margin-right: 47px;
+}
+#Name_DB,#UserName_DB,#Password_DB,#Host_DB,#Table_DB{
+    margin-left: 8px;
+}
+#UserName_Admin,#Password_Admin{
+    margin-left: 70px;
+    margin-right: 5px;
+}
 #lable1{margin-right: 6%}
 #lable2{margin-right: 10%}
 #lable3{margin-right: 8%}
@@ -59,6 +97,39 @@ body{
     left: 40%;
     top: -80px;
 }
+
+#Loding_Image{
+    position: absolute;
+    top: 0px;
+    left: 35%;
+    display: none;
+}
+#L_Form{
+    margin-top: 6%;
+    direction: rtl;
+}
+#Login_Form{
+    border: 3px solid #6E807B;
+    width: 300px;
+    height: 450px;
+    border-radius: 10px;
+}
+#Header_Login{
+    border-right: 3px solid #6e807b;
+    border-bottom: 3px solid #6e807b;
+    border-left: 3px solid #6e807b;
+    height: 30px;
+    width: 140px;
+    border-radius: 0px 0px 8px 8px;
+    padding-bottom: 25px;
+    padding-right: 15px;
+    padding-left: 5px;
+}
+#Logo{
+    width: 225px;
+    height: 200px;
+    margin-top: -50px;
+}
 #Result_Tex{
     text-align: center;
     padding-top: 5%;
@@ -72,19 +143,6 @@ body{
 main {
     position: relative;
     height: 100vh;
-}
-main .helper {
-    background: rgba(0, 0, 0, 0.2);
-    color: #ffea92;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    padding: 1.2em 2em;
-    text-align: center;
-    border-radius: 20px;
-    font-size: 2em;
-    font-weight: bold;
 }
 main .helper span {
     color: rgba(0, 0, 0, 0.2);

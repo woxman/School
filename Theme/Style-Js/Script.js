@@ -64,17 +64,20 @@ $(document).ready(function(){
     });
 
     $(".Delete").click(function(){
-        var x=$(this).attr('id');
-        $.ajax({
-            type: 'post',
-            url: 'Function/Routing.php',
-            data: 'Delete='+x,
-            success: function (data4) {
-                $("#Result_Tex").text(data4);
-                Animate_Box();
-                Show_Data();
-            }
-        });
+        if(confirm("آیا از اجرای این دستور اطمینان دارید؟"+"\n"+"تمامی داده های مربوط به این شخص پاک خواد شد!!"))
+        {
+            var x=$(this).attr('id');
+            $.ajax({
+                type: 'post',
+                url: 'Function/Routing.php',
+                data: 'Delete='+x,
+                success: function (data4) {
+                    $("#Result_Tex").text(data4);
+                    Animate_Box();
+                    Show_Data();
+                }
+            });
+        }
         return false;
     });
 
@@ -97,19 +100,49 @@ $(document).ready(function(){
     });
 
     $('#Form5').bind('submit', function () {
-        var Group_Del=$("#Group_Delete").val();
-        $.ajax({
-            type: 'post',
-            url: 'Function/Routing.php',
-            data: 'Group_Delete='+Group_Del,
-            success: function (data6) {
-                $("#Result_Tex").text(data6);
-                Animate_Box();
-                Show_Data();
-            }
-        });
+        if(confirm("آیا از اجرای این دستور اطمینان دارید؟"+"\n"+"تمامی داده های مربوط به این اشخاص پاک خواد شد!!"))
+         {
+            var Group_Del=$("#Group_Delete").val();
+            $.ajax({
+                type: 'post',
+                url: 'Function/Routing.php',
+                data: 'Group_Delete='+Group_Del,
+                success: function (data6) {
+                    $("#Result_Tex").text(data6);
+                    Animate_Box();
+                    Show_Data();
+                }
+            });
+        }
         return false;
     });
+
+    $('#Form_Install').bind('submit', function () {
+        $('#Loding_Image').css("display","block");
+        setTimeout(function()
+        {
+            $.ajax({
+                type: 'post',
+                url: '../Function/Routing.php',
+                data: $('#Form_Install').serialize(),
+                success: function (insdata)
+                {
+                    if (insdata=="SucsessFul")
+                    {
+                        $('#Loding_Image').css("display","none");
+                        $("#Result_Tex").text("پندارا با موفقیت نصب شد");
+                        Animate_Box();
+                        setTimeout(function(){location.replace("../Index.php")}, 4000);
+                    }else{
+                        $("#Result_Tex").text(insdata);
+                        Animate_Box();
+                    }
+                }
+            });
+        }, 2000);
+        return false;
+    });
+
 //-----------------------Form_Submit----------------------------
 //-----------------------Function----------------------------
     function Animate_Box()

@@ -42,6 +42,7 @@ if (isset($_POST['Group_Delete']))
 #-------------------Delete_Update--------------
 if (isset($_POST['TD']))
 {
+    global $db;
     $res7=Read_Data();
     echo"<tr>
         <th>نام</th>
@@ -87,6 +88,13 @@ if (isset($_POST['NE']))
     {
         echo"<option value='".$row['Expertise']."'>".$row['Expertise']."</option>";
     }
+}
+
+
+if (isset($_POST['Name_DB']))
+{
+    $res10=Check_Database($_POST['Name_DB'],$_POST['UserName_DB'],$_POST['Password_DB'],$_POST['Host_DB'],$_POST['UserName_Admin'],$_POST['Password_Admin'],$_POST['Table_DB']);
+    echo($res10);
 }
 
 ?>
