@@ -14,14 +14,11 @@ if (file_exists("Function/Config.php")) {
 }
 if (isset($_POST['Admins_Submit']))
 {
-    $_SESSION["Login"]="True";
+    //$_SESSION["Login"]="True";
     $User=$_POST['Admins_User'];
     $Pass=$_POST['Admins_Pass'];
-/*    $dbs_c=Connect_DB("Yes");
-    global $DB_Table;
-    $qr="SELECT UserName FROM "."$DB_Table"."_admin WHERE id=MAX(id)";
-    $rsl=mysqli_query($dbs_c, $qr);
-    echo ($rsl."s");*/
+    $Log_A=Admin_Login();
+    echo $Log_A;
 }
 ?>
 <!doctype html>

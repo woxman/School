@@ -450,4 +450,12 @@ function Delete_Folder($path){
     return false;
 }
 
+function Admin_Login()
+{
+    $dbs_c=Connect_DB("Yes");
+    global $DB_Table;
+    $qr="SELECT password FROM "."$DB_Table"."_admin WHERE username='naseri'";
+    $rsl=mysqli_query($dbs_c, $qr);
+    return($rsl);
+}
 ?>
