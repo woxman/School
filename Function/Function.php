@@ -450,12 +450,20 @@ function Delete_Folder($path){
     return false;
 }
 
-function Admin_Login()
+function Admin_Login($u,$p)
 {
+    $user=$u;
+    $pass=Get_Hash($p);
     $dbs_c=Connect_DB("Yes");
     global $DB_Table;
-    $qr="SELECT password FROM "."$DB_Table"."_admin WHERE username='naseri'";
-    $rsl=mysqli_query($dbs_c, $qr);
-    return($rsl);
+    $sql = "SELECT * FROM "."$DB_Table"."_admin WHERE id=2";
+    $rsl=mysqli_query($dbs_c, $sql);
+    $row=mysqli_fetch_array($rsl);
+    if ($user==$row['UserName'] and $pass==$row['Password'])
+    {
+        return("Login_True");
+    }else{
+        return("Login_False");
+    }
 }
 ?>

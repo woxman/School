@@ -1,5 +1,6 @@
 <?php
 session_start();
+$msg_log="";
 if (isset($_REQUEST['Log-Out']))
 {
     session_destroy();
@@ -14,11 +15,15 @@ if (file_exists("Function/Config.php")) {
 }
 if (isset($_POST['Admins_Submit']))
 {
-    //$_SESSION["Login"]="True";
     $User=$_POST['Admins_User'];
     $Pass=$_POST['Admins_Pass'];
-    $Log_A=Admin_Login();
-    echo $Log_A;
+    $Log_A=Admin_Login($User,$Pass);
+    if ($Log_A=="Login_True")
+    {
+        $_SESSION["Login"]="True";
+    }else{
+        $msg_log="مشخصات وارد شده درست نمیباشد!";
+    }
 }
 ?>
 <!doctype html>
@@ -60,6 +65,7 @@ if (isset($_SESSION['Login']))
                         <input type='password' class='form-control' id='Admins_Pass'  name='Admins_Pass'  required dir='ltr'>
                      </div>
                 </div>
+                <span id='msg_log'><b>$msg_log</b></span>
                 <br>
                 <input type='submit' value='ورود' class='btn btn-info' id='Admins_Submit' name='Admins_Submit'>
             </form>

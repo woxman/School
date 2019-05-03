@@ -130,6 +130,11 @@ body{
     height: 200px;
     margin-top: -50px;
 }
+#msg_log{
+    color: darkred;
+    font-size: 15px;
+    margin-top: -30px;
+}
 #Result_Tex{
     text-align: center;
     padding-top: 5%;
