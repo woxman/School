@@ -207,11 +207,11 @@ function Panel_A()
     echo("	<ul>");
     echo("    <a href='?Students'><div class='P_I'><i class=\"fal fa-user-tie \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;&nbsp;لیست دانش آموزان</span></div></a>");
     echo("    <a href='?Status'><div class='P_I'><i class=\"fal fa-user-cog \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;وضعیت دانش آموزان</span></div></a>");
-    echo("    <a href='?Add'><div class='P_I'><i class=\"fal fa-tachometer-alt \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;افزودن دانش آموزان</span></div></a>");
+    echo("    <a href='?Add'><div class='P_I'><i class=\"fal fa-tachometer-alt \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;افزودن دانش آموز</span></div></a>");
     echo("    <a href='?Obligation'><div class='P_I'><i class=\"fal fa-user-graduate \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;&nbsp;افزودن تعهد</span></div></a>");
     echo("    <a href='?Criticism'><div class='P_I'><i class=\"fal fa-user-graduate \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;&nbsp;افزودن انتقاد</span></div></a>");
-    echo("    <a href='?ss'><div class='P_I'><i class=\"fal fa-user-graduate \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;&nbsp;افزودن انتقاد</span></div></a>");
-    echo("    <a href='?Edit'><div class='P_I'><i class=\"fal fa-user-graduate \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;&nbsp;ویرایش گروهی</span></div></a>");
+    echo("    <a href='?Reminder'><div class='P_I'><i class=\"fal fa-user-graduate \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;&nbsp;افزودن تذکر</span></div></a>");
+    echo("    <a href='?Edit'><div class='P_I'><i class=\"fal fa-user-graduate \" style='font-size: 24px; color: whitesmoke;'></i><span>&nbsp;&nbsp;تغییرات گروهی</span></div></a>");
     echo("  </ul>");
     echo("</nav>");
     echo("<main>");
@@ -325,8 +325,15 @@ function Panel_A()
         echo ("<p style='margin-left: 60%'>Darsi-Enzebati</p>");
     }elseif(isset($_REQUEST['Criticism'])) {
         echo ("<p style='margin-left: 60%'>Tashvigh-Tazakorat</p>");
-    }elseif (isset($_REQUEST['ss'])){
-        echo ("<p style='margin-left: 60%'>Gheibat-Takhir</p>");
+    }elseif (isset($_REQUEST['Reminder'])){
+        echo"<div class='Window1'>
+            <select id='Class-List'>
+                
+            </select>
+            <select id='Student-List'>
+                
+            </select>
+        </div>";
     }else{
        goto A;
     }
@@ -465,5 +472,23 @@ function Admin_Login($u,$p)
     }else{
         return("Login_False");
     }
+}
+
+function Get_Class_List()
+{
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $qrsl="SELECT distinct Expertise FROM "."$DB_Table"."_student";
+    $qrsl_r=mysqli_query($dbs_c, $qrsl);
+    return($qrsl_r);
+}
+
+function Get_Student_List($wh)
+{
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $qrss="SELECT * FROM "."$DB_Table"."_student WHERE Expertise='$wh'";
+    $qrsl_rr=mysqli_query($dbs_c, $qrss);
+    return($qrsl_rr);
 }
 ?>

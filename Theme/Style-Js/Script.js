@@ -143,6 +143,19 @@ $(document).ready(function(){
         return false;
     });
 
+    $('#Class-List').on("change",function () {
+        var Group_School=$("#Class-List").val();
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: 'Student-List='+Group_School,
+            success: function (data11) {
+                $('#Student-List').children().remove();
+                $('#Student-List').append(data11);
+            }
+        });
+
+    });
 //-----------------------Form_Submit----------------------------
 //-----------------------Function----------------------------
     function Animate_Box()
@@ -183,6 +196,16 @@ $(document).ready(function(){
                 $('#Now_Expertises').append(data9);
             }
         });
+
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: 'Class-List=Show',
+            success: function (data10) {
+                $('#Class-List').append(data10);
+            }
+        });
+
         return false;
     }
 //-----------------------Function----------------------------

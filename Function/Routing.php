@@ -90,11 +90,28 @@ if (isset($_POST['NE']))
     }
 }
 
-
 if (isset($_POST['Name_DB']))
 {
     $res10=Check_Database($_POST['Name_DB'],$_POST['UserName_DB'],$_POST['Password_DB'],$_POST['Host_DB'],$_POST['UserName_Admin'],$_POST['Password_Admin'],$_POST['Table_DB']);
     echo($res10);
+}
+
+if (isset($_POST['Class-List']))
+{
+    $res11=Get_Class_List();
+    while ($row=mysqli_fetch_array($res11))
+    {
+        echo"<option value='".$row['Expertise']."'>".$row['Expertise']."</option>";
+    }
+}
+
+if (isset($_POST['Student-List']))
+{
+    $res12=Get_Student_List($_POST['Student-List']);
+    while ($row=mysqli_fetch_array($res12))
+    {
+        echo"<option value='".$row['id']."'>".$row['Name']." ".$row['Family']."</option>";
+    }
 }
 
 ?>
