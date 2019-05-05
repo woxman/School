@@ -347,7 +347,7 @@ function Panel_A()
                 </select>
                 <br>
                 <label for='Date-Takhir'>تاریخ : </label>
-                <input type='text' id='Date-Takhir' name='Date-Takhir' dir='ltr' required>
+                <input type='date' id='Date-Takhir' name='Date-Takhir' dir='ltr' required>
                 <br>
                 <label for='Hour-Takhir'>چند ساعت : </label>
                 <input type='number' id='Hour-Takhir' name='Hour-Takhir' min='0' max='6' required>
@@ -378,7 +378,7 @@ function Panel_A()
                 </select>
                 <br>
                 <label for='Date-Gheybat'>تاریخ : </label>
-                <input type='text' id='Date-Gheybat' name='Date-Gheybat' dir='ltr'>
+                <input type='date' id='Date-Gheybat' name='Date-Gheybat' dir='ltr'>
                 <br>
                 <label for='Note-Gheybat'>ملاحضات : </label>
                 <textarea name='Note-Gheybat' id='Note-Gheybat' cols='30' rows='2' style='resize: none;margin-right: 70px'></textarea>
@@ -544,15 +544,31 @@ function Get_Student_List($wh)
     return($qrsl_rr);
 }
 
-function Insert_Takhir($id,$Day,$Data,$Hour,$Note)
+function Insert_Takhir($id,$Day,$Date,$Hour,$Note)
 {
     $dbs_c=Connect_DB("No");
     global $DB_Table;
+    $qrit="INSERT INTO "."$DB_Table"."_delay(id, Day, Date, Hour, Note)
+             VALUES('$id', '$Day', '$Date', '$Hour', '$Note')";
+    $qritr=mysqli_query($dbs_c, $qrit);
+    if ($qritr)
+    {
+        return("تمامی اطلاعات شما با موفقیت ثبت شد");
+
+    }
 }
 
-function Insert_Gheybat($id,$Day,$Data,$Note)
+function Insert_Gheybat($id,$Day,$Date,$Note)
 {
     $dbs_c=Connect_DB("No");
     global $DB_Table;
+    $qrit="INSERT INTO "."$DB_Table"."_delay(id, Day, Date, Note)
+             VALUES('$id', '$Day', '$Date', '$Note')";
+    $qritr=mysqli_query($dbs_c, $qrit);
+    if ($qritr)
+    {
+        return("تمامی اطلاعات شما با موفقیت ثبت شد");
+
+    }
 }
 ?>

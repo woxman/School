@@ -134,6 +134,7 @@ $(document).ready(function(){
                         Animate_Box();
                         setTimeout(function(){location.replace("../Index.php")}, 4000);
                     }else{
+                        $('#Loding_Image').css("display","none");
                         $("#Result_Tex").text(insdata);
                         Animate_Box();
                     }

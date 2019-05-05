@@ -116,7 +116,7 @@ if (isset($_POST['Student-List']))
 
 if (isset($_POST['Day-Takhir']))
 {
-    $res13=Insert_Takhir($_POST['Student-List1'],$_POST['Day-Taskhir'],$_POST['Date-Takhir'],$_POST['Houre-Takhir'],$_POST['Note-Takhir']);
+    $res13=Insert_Takhir($_POST['Student-List1'],$_POST['Day-Takhir'],$_POST['Date-Takhir'],$_POST['Hour-Takhir'],$_POST['Note-Takhir']);
     echo($res13);
 }
 
