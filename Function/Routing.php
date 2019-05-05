@@ -114,4 +114,15 @@ if (isset($_POST['Student-List']))
     }
 }
 
+if (isset($_POST['Day-Takhir']))
+{
+    $res13=Insert_Takhir($_POST['Student-List1'],$_POST['Day-Taskhir'],$_POST['Date-Takhir'],$_POST['Houre-Takhir'],$_POST['Note-Takhir']);
+    echo($res13);
+}
+
+if (isset($_POST['Day-Gheybat']))
+{
+    $res14=Insert_Gheybat($_POST['Student-List2'],$_POST['Day-Gheybat'],$_POST['Date-Gheybat'],$_POST['Note-Gheybat']);
+    echo($res14);
+}
 ?>

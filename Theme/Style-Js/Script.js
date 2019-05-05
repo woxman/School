@@ -143,18 +143,60 @@ $(document).ready(function(){
         return false;
     });
 
-    $('#Class-List').on("change",function () {
-        var Group_School=$("#Class-List").val();
+    $('#Form6').bind('submit', function () {
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: $('#Form6').serialize(),
+            success: function (Th) {
+                $("#Result_Tex").text(Th);
+                //$("Form6 ").reset();
+                Animate_Box();
+                Show_Data();
+            }
+        });
+        return false;
+    });
+
+    $('#Form7').bind('submit', function () {
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: $('#Form7').serialize(),
+            success: function (Gh) {
+                $("#Result_Tex").text(Gh);
+                //$("Form7 ").reset();
+                Animate_Box();
+                Show_Data();
+            }
+        });
+        return false;
+    });
+
+    $('#Class-List1').on("change",function () {
+        var Group_School=$("#Class-List1").val();
         $.ajax({
             type: 'post',
             url: 'Function/Routing.php',
             data: 'Student-List='+Group_School,
             success: function (data11) {
-                $('#Student-List').children().remove();
-                $('#Student-List').append(data11);
+                $('#Student-List1').children().remove();
+                $('#Student-List1').append(data11);
             }
         });
+    });
 
+    $('#Class-List2').on("change",function () {
+        var Group_School=$("#Class-List2").val();
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: 'Student-List='+Group_School,
+            success: function (data11) {
+                $('#Student-List2').children().remove();
+                $('#Student-List2').append(data11);
+            }
+        });
     });
 //-----------------------Form_Submit----------------------------
 //-----------------------Function----------------------------
@@ -202,7 +244,8 @@ $(document).ready(function(){
             url: 'Function/Routing.php',
             data: 'Class-List=Show',
             success: function (data10) {
-                $('#Class-List').append(data10);
+                $('.Class-List').children().remove();
+                $('.Class-List').append(data10);
             }
         });
 

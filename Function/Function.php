@@ -326,13 +326,65 @@ function Panel_A()
     }elseif(isset($_REQUEST['Criticism'])) {
         echo ("<p style='margin-left: 60%'>Tashvigh-Tazakorat</p>");
     }elseif (isset($_REQUEST['Reminder'])){
-        echo"<div class='Window1'>
-            <select id='Class-List'>
-                
-            </select>
-            <select id='Student-List'>
-                
-            </select>
+        echo"
+        <div class='Window1'>
+            <div align='center'><< فرم  تاخیر >></div><br>
+            <form action='' method='post' id='Form6'>
+                <label for='Class-List1'>کلاس : </label>
+                <select id='Class-List1' class='Class-List'></select>
+                <label for='Student-List1'>داش آموز : </label>
+                <select id='Student-List1' name='Student-List1' required></select>
+                <br>
+                <label for='Day-Takhir'>روز : </label>
+                <select id='Day-Takhir' name='Day-Takhir' required>
+                <option value='شنبه'>شنبه</option>
+                <option value='یکشنبه'>یکشنبه</option>
+                <option value='دوشنبه'>دوشنبه</option>
+                <option value='سه شنبه'>سه شنبه</option>
+                <option value='چهارشنبه'>چهارشنبه</option>
+                <option value='پنجشنبه'>پنجشنبه</option>
+                <option value='جمعه'>جمعه</option>
+                </select>
+                <br>
+                <label for='Date-Takhir'>تاریخ : </label>
+                <input type='text' id='Date-Takhir' name='Date-Takhir' dir='ltr' required>
+                <br>
+                <label for='Hour-Takhir'>چند ساعت : </label>
+                <input type='number' id='Hour-Takhir' name='Hour-Takhir' min='0' max='6' required>
+                <br>
+                <label for='Note-Takhir'>ملاحضات : </label>
+                <textarea name='Note-Takhir' id='Note-Takhir' cols='30' rows='2' style='resize: none;margin-right: 70px' required></textarea>
+                <br>
+                <input type='submit' id='Submit-Takhir' name='Submit-Takhir' value='ثبت' class='btn btn-info'>
+            </form>
+        </div>
+        <div class='Window1'>
+            <div align='center'><< فرم  غیبت >></div><br>
+            <form action='' id='Form7'>
+                <label for='Class-List2'>کلاس : </label>
+                <select id='Class-List2' class='Class-List'></select>
+                <label for='Student-List2'>داش آموز : </label>
+                <select id='Student-List2' name='Student-List2'></select>
+                <br>
+                <label for='Day-Gheybat'>روز : </label>
+                <select id='Day-Gheybat' name='Day-Gheybat'>
+                <option value='شنبه'>شنبه</option>
+                <option value='یکشنبه'>یکشنبه</option>
+                <option value='دوشنبه'>دوشنبه</option>
+                <option value='سه شنبه'>سه شنبه</option>
+                <option value='چهارشنبه'>چهارشنبه</option>
+                <option value='پنجشنبه'>پنجشنبه</option>
+                <option value='جمعه'>جمعه</option>
+                </select>
+                <br>
+                <label for='Date-Gheybat'>تاریخ : </label>
+                <input type='text' id='Date-Gheybat' name='Date-Gheybat' dir='ltr'>
+                <br>
+                <label for='Note-Gheybat'>ملاحضات : </label>
+                <textarea name='Note-Gheybat' id='Note-Gheybat' cols='30' rows='2' style='resize: none;margin-right: 70px'></textarea>
+                <br>
+                <input type='submit' id='Submit-Gheybat' name='Submit-Gheybat' value='ثبت' class='btn btn-info'>
+            </form>
         </div>";
     }else{
        goto A;
@@ -490,5 +542,17 @@ function Get_Student_List($wh)
     $qrss="SELECT * FROM "."$DB_Table"."_student WHERE Expertise='$wh'";
     $qrsl_rr=mysqli_query($dbs_c, $qrss);
     return($qrsl_rr);
+}
+
+function Insert_Takhir($id,$Day,$Data,$Hour,$Note)
+{
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+}
+
+function Insert_Gheybat($id,$Day,$Data,$Note)
+{
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
 }
 ?>
