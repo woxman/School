@@ -217,54 +217,53 @@ function Panel_A()
     echo("<main>");
     if (isset($_REQUEST['Add']))
     {
-        echo("<form action='' method='post' class='Window1' id='Form1'>");
-        echo("    <label for='Name1'>نام :</label>");
-        echo("    <input type='text' id='Name1' name='Name1'>");
-        echo("    <br><br>");
-        echo("    <label for='Family1'>نام خانوادگی :</label>");
-        echo("    <input type='text' id='Family1' name='Family1'>");
-        echo("    <br><br>");
-        echo("    <label for='FatherName1'>نام پدر :</label>");
-        echo("    <input type='text' id='FatherName1' name='FatherName1'>");
-        echo("    <br><br>");
-        echo("    <label for='Expertise1'>رشته :</label>");
-        echo("    <input type='text' id='Expertise1' name='Expertise1'>");
-        echo("    <br><br>");
-        echo("    <label for='BirthDay1'>تاریخ تولد :</label>");
-        echo("    <input type='date' id='BirthDay1' name='BirthDay1' >");
-        echo("    <br><br>");
-        echo("    <label for='Phone1'>تلفن :</label>");
-        echo("    <input type='text' id='Phone1' name='Phone1' dir='ltr'>");
-        echo("    <br><br>");
-        echo("    <label for='Address1'>آدرس :</label>");
-        echo("    <input type='text' id='Address1' name='Address1'>");
-        echo("    <br><br>");
-        echo("    <input type='submit' value='ثبت' id='Send1' name='Send1' class='btn btn-primary'>");
-        echo("</form>");
-        echo("<br>");
-
-        echo("<div style='width: 1000px;border-bottom: 1px solid black;margin-left: 285px'></div>");
-
-        echo("<br>");
-        echo("<form action='#' method='post' dir='rtl' class='Window2' id='Form2'>");
-        echo("    <label for='Name2' id='lable1'>نام</label>");
-        echo("    <label for='Family2' id='lable2'>نام خانوادگی</label>");
-        echo("    <label for='FatherName2' id='lable3'>نام پدر</label>");
-        echo("    <label for='Expertise2' id='lable4'>رشته</label>");
-        echo("    <label for='Phone2' id='lable4'>نلفن</label>");
-        echo("    <label for='BirthDay2' id='lable5'>تاریخ تولد</label>");
-        echo("    <label for='Address2' id='lable6'>آدرس منزل</label>");
-        echo("    <br>");
-        echo("    <textarea name='Name2' id='Name2' cols='10' rows='20' class='textarea input-sm'></textarea>");
-        echo("    <textarea name='Family2' id='Family2' cols='10' rows='20' class='textarea input-sm'></textarea>");
-        echo("    <textarea name='FatherName2' id='FatherName2' cols='10' rows='20' class='textarea input-sm'></textarea>");
-        echo("    <textarea name='Expertise2' id='Expertise2' cols='10' rows='20' class='textarea input-sm'></textarea>");
-        echo("    <textarea name='Phone2' id='Phone2' cols='10' rows='20' class='textarea input-sm' dir='ltr'></textarea>");
-        echo("    <textarea name='BirthDay2' id='BirthDay2' cols='10' rows='20' class='textarea input-sm' dir='ltr'></textarea>");
-        echo("    <textarea name='Address2' id='Address2' cols='10' rows='20' class='textarea input-sm'></textarea>");
-        echo("    <br>");
-        echo("    <input type='submit' value='ثبت' id='Send2' name='Send2' class='btn btn-primary'>");
-        echo("</form>");
+        echo"
+        <form action='' method='post' class='Window1' id='Form1'>
+            <label for='Name1'>نام :</label>
+            <input type='text' id='Name1' name='Name1'>
+            <br><br>
+            <label for='Family1'>نام خانوادگی :</label>
+            <input type='text' id='Family1' name='Family1'>
+            <br><br>
+            <label for='FatherName1'>نام پدر :</label>
+            <input type='text' id='FatherName1' name='FatherName1'>
+            <br><br>
+            <label for='Expertise1'>رشته :</label>
+            <input type='text' id='Expertise1' name='Expertise1'>
+            <br><br>
+            <label for='BirthDay1'>تاریخ تولد :</label>
+            <input type='date' id='BirthDay1' name='BirthDay1' >
+            <br><br>
+            <label for='Phone1'>تلفن :</label>
+            <input type='text' id='Phone1' name='Phone1' dir='ltr'>
+            <br><br>
+            <label for='Address1'>آدرس :</label>
+            <input type='text' id='Address1' name='Address1'>
+            <br><br>
+            <input type='submit' value='ثبت' id='Send1' name='Send1' class='btn btn-primary'>
+        </form>
+        <br>
+        <div style='width: 1000px;border-bottom: 1px solid black;margin-left: 285px'></div>
+        <br>
+        <form action='#' method='post' dir='rtl' class='Window2' id='Form2'>
+            <label for='Name2' id='lable1'>نام</label>
+            <label for='Family2' id='lable2'>نام خانوادگی</label>
+            <label for='FatherName2' id='lable3'>نام پدر</label>
+            <label for='Expertise2' id='lable4'>رشته</label>
+            <label for='Phone2' id='lable4'>نلفن</label>
+            <label for='BirthDay2' id='lable5'>تاریخ تولد</label>
+            <label for='Address2' id='lable6'>آدرس منزل</label>
+            <br>
+            <textarea name='Name2' id='Name2' cols='10' rows='20' class='textarea input-sm'></textarea>
+            <textarea name='Family2' id='Family2' cols='10' rows='20' class='textarea input-sm'></textarea>
+            <textarea name='FatherName2' id='FatherName2' cols='10' rows='20' class='textarea input-sm'></textarea>
+            <textarea name='Expertise2' id='Expertise2' cols='10' rows='20' class='textarea input-sm'></textarea>
+            <textarea name='Phone2' id='Phone2' cols='10' rows='20' class='textarea input-sm' dir='ltr'></textarea>
+            <textarea name='BirthDay2' id='BirthDay2' cols='10' rows='20' class='textarea input-sm' dir='ltr'></textarea>
+            <textarea name='Address2' id='Address2' cols='10' rows='20' class='textarea input-sm'></textarea>
+            <br>
+            <input type='submit' value='ثبت' id='Send2' name='Send2' class='btn btn-primary'>
+        </form>";
     }elseif (isset($_REQUEST['Students'])) {
         A:
         $dbs_c=Connect_DB("Yes");
@@ -301,30 +300,157 @@ function Panel_A()
         echo("        </table>");
         echo("</div>");
     }elseif (isset($_REQUEST['Edit'])) {
-        echo("<form method='post' class='Window1' id='Form4'>");
-        echo("    <label for='Now_Expertises'>پارامتر فعلی:</label>");
-        echo("    <select id='Now_Expertises'>");
-        echo("    </select>");
-        echo("    <br>");
-        echo("    <label for='New_Expertises'>پارامتر جدید:</label>");
-        echo("    <input type='text' id='New_Expertises' name='New_Expertises'>");
-        echo("    <br>");
-        echo("    <input type='submit' class='btn btn-info' value='تغییر' id='Send4' name='Send4'>");
-        echo("</form>");
-
-        echo("<form method='post' class='Window1' id='Form5'>");
-        echo("    <label for='Group_Delete'>کدام گروه : </label>");
-        echo("    <select id='Group_Delete'>");
-        echo("    </select>");
-        echo("    <br>");
-        echo("    <input type='submit' class='btn btn-info' value='پاک کردن گروه' id='Send5' name='Send5'>");
-        echo("</form>");
+        echo"<form method='post' class='Window1' id='Form4'>
+            <label for='Now_Expertises'>پارامتر فعلی:</label>
+            <select id='Now_Expertises'>
+            </select>
+            <br>
+            <label for='New_Expertises'>پارامتر جدید:</label>
+            <input type='text' id='New_Expertises' name='New_Expertises'>
+            <br>
+            <input type='submit' class='btn btn-info' value='تغییر' id='Send4' name='Send4'>
+        </form>
+        <form method='post' class='Window1' id='Form5'>
+            <label for='Group_Delete'>کدام گروه : </label>
+            <select id='Group_Delete'>
+            </select>
+            <br>
+            <input type='submit' class='btn btn-info' value='پاک کردن گروه' id='Send5' name='Send5'>
+        </form>";
     }elseif (isset($_REQUEST['Status'])) {
         echo ("<p style='margin-left: 60%'>Vazeiat Koli Danesh Amoz</p>");
     }elseif(isset($_REQUEST['Obligation'])) {
-        echo ("<p style='margin-left: 60%'>Darsi-Enzebati</p>");
+        echo "
+        <div class='Window1'>
+            <div align='center'><< فرم  تعهد درسی >></div><br>
+            <form action='' id='Form10'>
+                <label for='Class-List1'>کلاس : </label>
+                <select id='Class-List1' class='Class-List'></select>
+                <label for='Student-List1'>داش آموز : </label>
+                <select id='Student-List1' name='Student-List1'></select>
+                <br>
+                <label for='Day-Darsi'>روز : </label>
+                <select id='Day-Darsi' name='Day-Darsi'>
+                    <option value='شنبه'>شنبه</option>
+                    <option value='یکشنبه'>یکشنبه</option>
+                    <option value='دوشنبه'>دوشنبه</option>
+                    <option value='سه شنبه'>سه شنبه</option>
+                    <option value='چهارشنبه'>چهارشنبه</option>
+                    <option value='پنجشنبه'>پنجشنبه</option>
+                    <option value='جمعه'>جمعه</option>
+                </select>
+                <br>
+                <label for='Rust-Darsi'>زنگ چندم : </label>
+                <select name='Rust-Darsi' id='Rust-Darsi'>
+                    <option value='اول'>اول</option>
+                    <option value='دوم'>دوم</option>
+                    <option value='سوم'>سوم</option>
+                    <option value='چهارم'>چهارم</option>                    
+                </select>
+                <br>
+                <label for='Date-Darsi'>تاریخ : </label>
+                <input type='date' id='Date-Darsi' name='Date-Darsi' dir='ltr'>
+                <br>
+                <label for='Note-Darsi'>ملاحضات : </label>
+                <textarea name='Note-Darsi' id='Note-Darsi' cols='30' rows='2' style='resize: none;margin-right: 70px'></textarea>
+                <br>
+                <input type='submit' id='Submit-Darsi' name='Submit-Darsi' value='ثبت' class='btn btn-info'>
+            </form>
+        </div>
+        <div class='Window1'>
+            <div align='center'><< فرم  تعهد انظباظی >></div><br>
+            <form action='' id='Form11'>
+                <label for='Class-List2'>کلاس : </label>
+                <select id='Class-List2' class='Class-List'></select>
+                <label for='Student-List2'>داش آموز : </label>
+                <select id='Student-List2' name='Student-List2'></select>
+                <br>
+                <label for='Day-Enzebati'>روز : </label>
+                <select id='Day-Enzebati' name='Day-Enzebati'>
+                    <option value='شنبه'>شنبه</option>
+                    <option value='یکشنبه'>یکشنبه</option>
+                    <option value='دوشنبه'>دوشنبه</option>
+                    <option value='سه شنبه'>سه شنبه</option>
+                    <option value='چهارشنبه'>چهارشنبه</option>
+                    <option value='پنجشنبه'>پنجشنبه</option>
+                    <option value='جمعه'>جمعه</option>
+                </select>
+                <br>
+                <label for='Rust-Enzebati'>زنگ چندم : </label>
+                <select name='Rust-Enzebati' id='Rust-Enzebati'>
+                    <option value='اول'>اول</option>
+                    <option value='دوم'>دوم</option>
+                    <option value='سوم'>سوم</option>
+                    <option value='چهارم'>چهارم</option>                    
+                </select>
+                <br>
+                <label for='Date-Enzebati'>تاریخ : </label>
+                <input type='date' id='Date-Enzebati' name='Date-Tazakor' dir='ltr'>
+                <br>
+                <label for='Note-Enzebati'>ملاحضات : </label>
+                <textarea name='Note-Enzebati' id='Note-Enzebati' cols='30' rows='2' style='resize: none;margin-right: 70px'></textarea>
+                <br>
+                <input type='submit' id='Submit-Enzebati' name='Submit-Enzebati' value='ثبت' class='btn btn-info'>
+            </form>
+        </div>";
     }elseif(isset($_REQUEST['Criticism'])) {
-        echo ("<p style='margin-left: 60%'>Tashvigh-Tazakorat</p>");
+        echo "
+        <div class='Window1'>
+            <div align='center'><< فرم  تشویق >></div><br>
+            <form action='' id='Form8'>
+                <label for='Class-List1'>کلاس : </label>
+                <select id='Class-List1' class='Class-List'></select>
+                <lass='for='Student-List1'>داش آموز : </label>
+                <select id='Student-List1' name='Student-List1'></select>
+                <br>
+                <label for='Day-Tashvigh'>روز : </label>
+                <select id='Day-Tashvigh' name='Day-Tashvigh'>
+                <option value='شنبه'>شنبه</option>
+                <option value='یکشنبه'>یکشنبه</option>
+                <option value='دوشنبه'>دوشنبه</option>
+                <option value='سه شنبه'>سه شنبه</option>
+                <option value='چهارشنبه'>چهارشنبه</option>
+                <option value='پنجشنبه'>پنجشنبه</option>
+                <option value='جمعه'>جمعه</option>
+                </select>
+                <br>
+                <label for='Date-Tashvigh'>تاریخ : </label>
+                <input type='date' id='Date-Tashvigh' name='Date-Tashvigh' dir='ltr'>
+                <br>
+                <label for='Note-Tashvigh'>ملاحضات : </label>
+                <textarea name='Note-Tashvigh' id='Note-Tashvigh' cols='30' rows='2' style='resize: none;margin-right: 70px'></textarea>
+                <br>
+                <input type='submit' id='Submit-Tashvigh' name='Submit-Tashvigh' value='ثبت' class='btn btn-info'>
+            </form>
+        </div>
+        <div class='Window1'>
+            <div align='center'><< فرم  تذکر >></div><br>
+            <form action='' id='Form9'>
+                <label for='Class-List2'>کلاس : </label>
+                <select id='Class-List2' class='Class-List'></select>
+                <label for='Student-List2'>داش آموز : </label>
+                <select id='Student-List2' name='Student-List2'></select>
+                <br>
+                <label for='Day-Tazakor'>روز : </label>
+                <select id='Day-Tazakor' name='Day-Tazakor'>
+                <option value='شنبه'>شنبه</option>
+                <option value='یکشنبه'>یکشنبه</option>
+                <option value='دوشنبه'>دوشنبه</option>
+                <option value='سه شنبه'>سه شنبه</option>
+                <option value='چهارشنبه'>چهارشنبه</option>
+                <option value='پنجشنبه'>پنجشنبه</option>
+                <option value='جمعه'>جمعه</option>
+                </select>
+                <br>
+                <label for='Date-Tazakor'>تاریخ : </label>
+                <input type='date' id='Date-Tazakor' name='Date-Tazakor' dir='ltr'>
+                <br>
+                <label for='Note-Tazakor'>ملاحضات : </label>
+                <textarea name='Note-Tazakor' id='Note-Tazakor' cols='30' rows='2' style='resize: none;margin-right: 70px'></textarea>
+                <br>
+                <input type='submit' id='Submit-Tazakor' name='Submit-Tazakor' value='ثبت' class='btn btn-info'>
+            </form>
+        </div>";
     }elseif (isset($_REQUEST['Reminder'])){
         echo"
         <div class='Window1'>
@@ -544,12 +670,12 @@ function Get_Student_List($wh)
     return($qrsl_rr);
 }
 
-function Insert_Takhir($id,$Day,$Date,$Hour,$Note)
+function Insert_Takhir($SubId,$Day,$Date,$Hour,$Note)
 {
     $dbs_c=Connect_DB("No");
     global $DB_Table;
-    $qrit="INSERT INTO "."$DB_Table"."_delay(id, Day, Date, Hour, Note)
-             VALUES('$id', '$Day', '$Date', '$Hour', '$Note')";
+    $qrit="INSERT INTO "."$DB_Table"."_delay(Day, Date, Hour, Note ,SubId)
+             VALUES('$Day', '$Date', '$Hour', '$Note', '$SubId')";
     $qritr=mysqli_query($dbs_c, $qrit);
     if ($qritr)
     {
@@ -558,16 +684,72 @@ function Insert_Takhir($id,$Day,$Date,$Hour,$Note)
     }
 }
 
-function Insert_Gheybat($id,$Day,$Date,$Note)
+function Insert_Gheybat($SubId,$Day,$Date,$Note)
 {
     $dbs_c=Connect_DB("No");
     global $DB_Table;
-    $qrit="INSERT INTO "."$DB_Table"."_delay(id, Day, Date, Note)
-             VALUES('$id', '$Day', '$Date', '$Note')";
+    $qrit="INSERT INTO "."$DB_Table"."_Absenteeism(Day, Date, Note, SubId)
+             VALUES('$Day', '$Date', '$Note', '$SubId')";
     $qritr=mysqli_query($dbs_c, $qrit);
     if ($qritr)
     {
-        return("تمامی اطلاعات شما با موفقیت ثبت شد");
+        return("فیلد با موفقیت افزوده شد");
+
+    }
+}
+
+function Insert_Tashvigh($SubId,$Day,$Date,$Note)
+{
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $qrits="INSERT INTO "."$DB_Table"."_Encouragement(Day, Date, Note, SubId)
+             VALUES('$Day', '$Date', '$Note', '$SubId')";
+    $qritrs=mysqli_query($dbs_c, $qrits);
+    if ($qritrs)
+    {
+        return("فیلد با موفقیت افزوده شد");
+
+    }
+}
+
+function Insert_Tazakor($SubId,$Day,$Date,$Note)
+{
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $qritz="INSERT INTO "."$DB_Table"."_Reminder(Day, Date, Note, SubId)
+             VALUES('$Day', '$Date', '$Note', '$SubId')";
+    $qritrz=mysqli_query($dbs_c, $qritz);
+    if ($qritrz)
+    {
+        return("فیلد با موفقیت افزوده شد");
+
+    }
+}
+
+function Insert_Darsi($SubId,$Day,$Rust,$Date,$Note)
+{
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $qrid="INSERT INTO "."$DB_Table"."_class_oligation(Day, Date, Rust, Note, SubId)
+             VALUES('$Day', '$Rust', '$Date', '$Note', '$SubId')";
+    $qridr=mysqli_query($dbs_c, $qrid);
+    if ($qridr)
+    {
+        return("فیلد با موفقیت افزوده شد");
+
+    }
+}
+
+function Insert_Enzebati($SubId,$Day,$Rust,$Date,$Note)
+{
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $qrid="INSERT INTO "."$DB_Table"."_Dicipline_Oligation(Day, Date, Rust, Note, SubId)
+             VALUES('$Day', '$Rust', '$Date', '$Note', '$SubId')";
+    $qridr=mysqli_query($dbs_c, $qrid);
+    if ($qridr)
+    {
+        return("فیلد با موفقیت افزوده شد");
 
     }
 }

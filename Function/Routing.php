@@ -99,6 +99,7 @@ if (isset($_POST['Name_DB']))
 if (isset($_POST['Class-List']))
 {
     $res11=Get_Class_List();
+    echo"<option selected><></option>";
     while ($row=mysqli_fetch_array($res11))
     {
         echo"<option value='".$row['Expertise']."'>".$row['Expertise']."</option>";
@@ -124,5 +125,29 @@ if (isset($_POST['Day-Gheybat']))
 {
     $res14=Insert_Gheybat($_POST['Student-List2'],$_POST['Day-Gheybat'],$_POST['Date-Gheybat'],$_POST['Note-Gheybat']);
     echo($res14);
+}
+
+if (isset($_POST['Day-Tashvigh']))
+{
+    $res15=Insert_Gheybat($_POST['Student-List1'],$_POST['Day-Tashvigh'],$_POST['Date-Tashvigh'],$_POST['Note-Tashvigh']);
+    echo($res15);
+}
+
+if (isset($_POST['Day-Tazakor']))
+{
+    $res16=Insert_Gheybat($_POST['Student-List2'],$_POST['Day-Tazakor'],$_POST['Date-Tazakor'],$_POST['Note-Tazakor']);
+    echo($res16);
+}
+
+if (isset($_POST['Day-Darsi']))
+{
+    $res17=Insert_Darsi($_POST['Student-List1'],$_POST['Day-Darsi'],$_POST['Rust-Darsi'],$_POST['Date-Darsi'],$_POST['Note-Darsi']);
+    echo($res17);
+}
+
+if (isset($_POST['Day-Enzebati']))
+{
+    $res18=Insert_Enzebati($_POST['Student-List2'],$_POST['Day-Enzebati'],$_POST['Rust-Enzebati'],$_POST['Date-Enzebati'],$_POST['Note-Enzebati']);
+    echo($res18);
 }
 ?>

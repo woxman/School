@@ -174,6 +174,66 @@ $(document).ready(function(){
         return false;
     });
 
+    $('#Form8').bind('submit', function () {
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: $('#Form8').serialize(),
+            success: function (Gh) {
+                $("#Result_Tex").text(Gh);
+                //$("Form7 ").reset();
+                Animate_Box();
+                Show_Data();
+            }
+        });
+        return false;
+    });
+
+    $('#Form9').bind('submit', function () {
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: $('#Form9').serialize(),
+            success: function (Gh) {
+                $("#Result_Tex").text(Gh);
+                //$("Form9 ").reset();
+                Animate_Box();
+                Show_Data();
+            }
+        });
+        return false;
+    });
+
+    $('#Form10').bind('submit', function () {
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: $('#Form10').serialize(),
+            success: function (Gh) {
+                $("#Result_Tex").text(Gh);
+                //$("Form10 ").reset();
+                Animate_Box();
+                Show_Data();
+            }
+        });
+        return false;
+    });
+
+    $('#Form11').bind('submit', function () {
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: $('#Form11').serialize(),
+            success: function (Gh) {
+                $("#Result_Tex").text(Gh);
+                //$("Form11 ").reset();
+                Animate_Box();
+                Show_Data();
+            }
+        });
+        return false;
+    });
+
     $('#Class-List1').on("change",function () {
         var Group_School=$("#Class-List1").val();
         $.ajax({
