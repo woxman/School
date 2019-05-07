@@ -130,6 +130,9 @@ body{
     height: 200px;
     margin-top: -50px;
 }
+.M_Input{
+    margin-right: 30px;
+}
 #msg_log{
     color: darkred;
     font-size: 15px;

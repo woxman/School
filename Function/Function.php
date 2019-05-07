@@ -219,28 +219,42 @@ function Panel_A()
     {
         echo"
         <form action='' method='post' class='Window1' id='Form1' style='margin-bottom: 0px'>
-            <label for='Name1'>نام :</label>
-            <input type='text' id='Name1' name='Name1'>
-            <br><br>
-            <label for='Family1'>نام خانوادگی :</label>
-            <input type='text' id='Family1' name='Family1'>
-            <br><br>
-            <label for='FatherName1'>نام پدر :</label>
-            <input type='text' id='FatherName1' name='FatherName1'>
-            <br><br>
-            <label for='Expertise1'>رشته :</label>
-            <input type='text' id='Expertise1' name='Expertise1'>
-            <br><br>
-            <label for='BirthDay1'>تاریخ تولد :</label>
-            <input type='date' id='BirthDay1' name='BirthDay1' >
-            <br><br>
-            <label for='Phone1'>تلفن :</label>
-            <input type='text' id='Phone1' name='Phone1' dir='ltr'>
-            <br><br>
-            <label for='Address1'>آدرس :</label>
-            <input type='text' id='Address1' name='Address1'>
-            <br><br>
-            <center><input type='submit' value='افزودن شخص' id='Send1' name='Send1' class='btn btn-primary'></center>
+            <div class='row'>
+                <label for='Name1' class='col-sm-4'>نام :</label>
+                <input type='text' id='Name1' name='Name1' class='form-control col-sm-6'>
+            </div>
+            <br>
+            <div class='row'>
+                <label for='Family1' class='col-sm-4'>نام خانوادگی :</label>
+                <input type='text' id='Family1' name='Family1' class='form-control col-sm-6'>
+            </div>
+            <br>
+            <div class='row'>
+                <label for='FatherName1' class='col-sm-4'>نام پدر :</label>
+                <input type='text' id='FatherName1' name='FatherName1' class='form-control col-sm-6'>
+            </div>
+            <br>
+            <div class='row'>
+                <label for='Expertise1' class='col-sm-4'>رشته :</label>
+                <input type='text' id='Expertise1' name='Expertise1' class='form-control col-sm-6'>
+            </div>
+            <br>
+            <div class='row'>
+                <label for='BirthDay1' class='col-sm-4'>تاریخ تولد :</label>
+                <input type='date' id='BirthDay1' name='BirthDay1' class='form-control col-sm-6'>
+            </div>
+            <br>
+            <div class='row'>
+                <label for='Phone1' class='col-sm-4'>تلفن :</label>
+                <input type='text' id='Phone1' name='Phone1' dir='ltr' class='form-control col-sm-6'>
+            </div>
+            <br>
+            <div class='row'>
+                <label for='Address1' class='col-sm-4'>آدرس :</label>
+                <input type='text' id='Address1' name='Address1' class='form-control col-sm-6'>
+            </div>
+            <br>
+            <center><input type='submit' value='افزودن شخص' id='Send1' name='Send1' class='btn btn-info'></center>
         </form>
         <br>
         <div style='width: 1000px;border-bottom: 1px solid #6c757d;margin-left: 285px'></div>
@@ -254,15 +268,17 @@ function Panel_A()
             <label for='BirthDay2' id='lable5'>تاریخ تولد</label>
             <label for='Address2' id='lable6'>آدرس منزل</label>
             <br>
-            <textarea name='Name2' id='Name2' cols='10' rows='20' class='textarea input-sm'></textarea>
-            <textarea name='Family2' id='Family2' cols='10' rows='20' class='textarea input-sm'></textarea>
-            <textarea name='FatherName2' id='FatherName2' cols='10' rows='20' class='textarea input-sm'></textarea>
-            <textarea name='Expertise2' id='Expertise2' cols='10' rows='20' class='textarea input-sm'></textarea>
-            <textarea name='Phone2' id='Phone2' cols='10' rows='20' class='textarea input-sm' dir='ltr'></textarea>
-            <textarea name='BirthDay2' id='BirthDay2' cols='10' rows='20' class='textarea input-sm' dir='ltr'></textarea>
-            <textarea name='Address2' id='Address2' cols='10' rows='20' class='textarea input-sm'></textarea>
-            <br><br>
-            <center><input type='submit' value='افزودن گروه' id='Send2' name='Send2' class='btn btn-primary'></center>
+            <div class='form-inline'>
+                <textarea name='Name2' id='Name2' cols='10' rows='20' class='textarea input-sm form-control col'></textarea>
+                <textarea name='Family2' id='Family2' cols='10' rows='20' class='textarea input-sm form-control col'></textarea>
+                <textarea name='FatherName2' id='FatherName2' cols='10' rows='20' class='textarea input-sm form-control col'></textarea>
+                <textarea name='Expertise2' id='Expertise2' cols='10' rows='20' class='textarea input-sm form-control col'></textarea>
+                <textarea name='Phone2' id='Phone2' cols='10' rows='20' class='textarea input-sm form-control col' dir='ltr'></textarea>
+                <textarea name='BirthDay2' id='BirthDay2' cols='10' rows='20' class='textarea input-sm form-control col' dir='ltr'></textarea>
+                <textarea name='Address2' id='Address2' cols='10' rows='20' class='textarea input-sm form-control col'></textarea>
+            </div>
+            <br>
+            <center><input type='submit' value='افزودن گروه' id='Send2' name='Send2' class='btn btn-info'></center>
         </form><br>";
     }elseif (isset($_REQUEST['Students'])) {
         A:
@@ -281,7 +297,7 @@ function Panel_A()
         echo("                <th colspan='2'>تغییرات</th>");
         echo("            </tr>");
         echo("            <tr id='Td_Table'>");
-        $qr="SELECT * FROM "."$DB_Table"."_student";
+        $qr="SELECT * FROM "."$DB_Table"."_student ORDER BY Expertise";
         $rs1=mysqli_query($dbs_c, $qr);
         while ($row=mysqli_fetch_array($rs1))
         {
@@ -301,21 +317,25 @@ function Panel_A()
         echo("</div>");
     }elseif (isset($_REQUEST['Edit'])) {
         echo"<form method='post' class='Window1' id='Form4'>
-            <label for='Now_Expertises'>پارامتر فعلی:</label>
-            <select id='Now_Expertises'>
-            </select>
+            <div class='row'>
+                <label for='Now_Expertises' class='col-sm-4'>پارامتر فعلی :</label>
+                <select id='Now_Expertises' class='custom-select col-sm-5'></select>
+            </div>
             <br>
-            <label for='New_Expertises'>پارامتر جدید:</label>
-            <input type='text' id='New_Expertises' name='New_Expertises'>
+            <div class='row'>
+                <label for='New_Expertises' class='col-sm-4'>پارامتر جدید :</label>
+                <input type='text' id='New_Expertises' name='New_Expertises' class='form-control col-sm-5'>
+            </div>
             <br>
-            <input type='submit' class='btn btn-info' value='تغییر' id='Send4' name='Send4'>
+            <center><input type='submit' class='btn btn-info' value='تغییر' id='Send4' name='Send4'></center>
         </form>
         <form method='post' class='Window1' id='Form5'>
-            <label for='Group_Delete'>کدام گروه : </label>
-            <select id='Group_Delete'>
-            </select>
+            <div class='row'>
+                <label for='Group_Delete' class='col-sm-4'>کدام گروه : </label>
+                <select id='Group_Delete' class='custom-select col-sm-5'></select>
+            </div>
             <br>
-            <input type='submit' class='btn btn-info' value='پاک کردن گروه' id='Send5' name='Send5'>
+            <center><input type='submit' class='btn btn-info' value='پاک کردن گروه' id='Send5' name='Send5'></center>
         </form>";
     }elseif (isset($_REQUEST['Status'])) {
         echo ("<p style='margin-left: 60%'>Vazeiat Koli Danesh Amoz</p>");
@@ -324,73 +344,93 @@ function Panel_A()
         <div class='Window1'>
             <div align='center'><< فرم  تعهد درسی >></div><br>
             <form action='' id='Form10'>
-                <label for='Class-List1'>کلاس : </label>
-                <select id='Class-List1' class='Class-List'></select>
-                <label for='Student-List1'>داش آموز : </label>
-                <select id='Student-List1' name='Student-List1'></select>
+                <div class='row'>
+                    <label for='Class-List1' class='col-sm-2'>کلاس : </label>
+                    <select id='Class-List1' class='Class-List custom-select col-sm-3'></select>
+                    <label for='Student-List1' class='col-sm-3'>داش آموز : </label>
+                    <select id='Student-List1' name='Student-List1' class='custom-select col-sm-3'></select>
+                </div>
                 <br>
-                <label for='Day-Darsi'>روز : </label>
-                <select id='Day-Darsi' name='Day-Darsi'>
-                    <option value='شنبه'>شنبه</option>
-                    <option value='یکشنبه'>یکشنبه</option>
-                    <option value='دوشنبه'>دوشنبه</option>
-                    <option value='سه شنبه'>سه شنبه</option>
-                    <option value='چهارشنبه'>چهارشنبه</option>
-                    <option value='پنجشنبه'>پنجشنبه</option>
-                    <option value='جمعه'>جمعه</option>
-                </select>
+                <div class='row'>
+                    <label for='Day-Darsi' class='col-sm-3'>روز : </label>
+                    <select id='Day-Darsi' name='Day-Darsi' class='custom-select col-sm-5'>
+                        <option value='شنبه'>شنبه</option>
+                        <option value='یکشنبه'>یکشنبه</option>
+                        <option value='دوشنبه'>دوشنبه</option>
+                        <option value='سه شنبه'>سه شنبه</option>
+                        <option value='چهارشنبه'>چهارشنبه</option>
+                        <option value='پنجشنبه'>پنجشنبه</option>
+                        <option value='جمعه'>جمعه</option>
+                    </select>
+                </div>
                 <br>
-                <label for='Rust-Darsi'>زنگ چندم : </label>
-                <select name='Rust-Darsi' id='Rust-Darsi'>
-                    <option value='اول'>اول</option>
-                    <option value='دوم'>دوم</option>
-                    <option value='سوم'>سوم</option>
-                    <option value='چهارم'>چهارم</option>                    
-                </select>
+                <div class='row'>
+                    <label for='Rust-Darsi' class='col-sm-3'>زنگ چندم : </label>
+                    <select name='Rust-Darsi' id='Rust-Darsi' class='custom-select col-sm-5'>
+                        <option value='اول'>اول</option>
+                        <option value='دوم'>دوم</option>
+                        <option value='سوم'>سوم</option>
+                        <option value='چهارم'>چهارم</option>                    
+                    </select>
+                </div>
                 <br>
-                <label for='Date-Darsi'>تاریخ : </label>
-                <input type='date' id='Date-Darsi' name='Date-Darsi' dir='ltr'>
+                <div class='row'>
+                    <label for='Date-Darsi' class='col-sm-3'>تاریخ : </label>
+                    <input type='date' id='Date-Darsi' name='Date-Darsi' dir='ltr' class='form-control col-sm-5'>
+                </div>
                 <br>
-                <label for='Note-Darsi'>ملاحضات : </label>
-                <textarea name='Note-Darsi' id='Note-Darsi' cols='30' rows='2' style='resize: none;margin-right: 70px'></textarea>
+                <div class='row'>
+                    <label for='Note-Darsi' class='col-sm-3'>ملاحضات : </label>
+                    <textarea name='Note-Darsi' id='Note-Darsi' cols='30' rows='2' style='resize: none;' class='form-control col-sm-7'></textarea>
+                </div>
                 <br>
-                <input type='submit' id='Submit-Darsi' name='Submit-Darsi' value='ثبت' class='btn btn-info'>
+                <center><input type='submit' id='Submit-Darsi' name='Submit-Darsi' value='ثبت' class='btn btn-info'></center>
             </form>
         </div>
         <div class='Window1'>
             <div align='center'><< فرم  تعهد انظباظی >></div><br>
             <form action='' id='Form11'>
-                <label for='Class-List2'>کلاس : </label>
-                <select id='Class-List2' class='Class-List'></select>
-                <label for='Student-List2'>داش آموز : </label>
-                <select id='Student-List2' name='Student-List2'></select>
+                <div class='row'>
+                    <label for='Class-List2' class='col-sm-2'>کلاس : </label>
+                    <select id='Class-List2' class='Class-List custom-select col-sm-3'></select>
+                    <label for='Student-List2' class='col-sm-3'>داش آموز : </label>
+                    <select id='Student-List2' name='Student-List2' class='custom-select col-sm-3'></select>
+                </div>
                 <br>
-                <label for='Day-Enzebati'>روز : </label>
-                <select id='Day-Enzebati' name='Day-Enzebati'>
-                    <option value='شنبه'>شنبه</option>
-                    <option value='یکشنبه'>یکشنبه</option>
-                    <option value='دوشنبه'>دوشنبه</option>
-                    <option value='سه شنبه'>سه شنبه</option>
-                    <option value='چهارشنبه'>چهارشنبه</option>
-                    <option value='پنجشنبه'>پنجشنبه</option>
-                    <option value='جمعه'>جمعه</option>
-                </select>
+                <div class='row'>
+                    <label for='Day-Enzebati' class='col-sm-3'>روز : </label>
+                    <select id='Day-Enzebati' name='Day-Enzebati' class='custom-select col-sm-5'>
+                        <option value='شنبه'>شنبه</option>
+                        <option value='یکشنبه'>یکشنبه</option>
+                        <option value='دوشنبه'>دوشنبه</option>
+                        <option value='سه شنبه'>سه شنبه</option>
+                        <option value='چهارشنبه'>چهارشنبه</option>
+                        <option value='پنجشنبه'>پنجشنبه</option>
+                        <option value='جمعه'>جمعه</option>
+                    </select>
+                </div>
                 <br>
-                <label for='Rust-Enzebati'>زنگ چندم : </label>
-                <select name='Rust-Enzebati' id='Rust-Enzebati'>
-                    <option value='اول'>اول</option>
-                    <option value='دوم'>دوم</option>
-                    <option value='سوم'>سوم</option>
-                    <option value='چهارم'>چهارم</option>                    
-                </select>
+                <div class='row'>
+                    <label for='Rust-Enzebati' class='col-sm-3'>زنگ چندم : </label>
+                    <select name='Rust-Enzebati' id='Rust-Enzebati' class='custom-select col-sm-5'>
+                        <option value='اول'>اول</option>
+                        <option value='دوم'>دوم</option>
+                        <option value='سوم'>سوم</option>
+                        <option value='چهارم'>چهارم</option>                    
+                    </select>                
+                </div>
                 <br>
-                <label for='Date-Enzebati'>تاریخ : </label>
-                <input type='date' id='Date-Enzebati' name='Date-Enzebati' dir='ltr'>
+                <div class='row'>
+                    <label for='Date-Enzebati' class='col-sm-3'>تاریخ : </label>
+                    <input type='date' id='Date-Enzebati' class='form-control col-sm-5' name='Date-Enzebati' dir='ltr'>
+                </div>
                 <br>
-                <label for='Note-Enzebati'>ملاحضات : </label>
-                <textarea name='Note-Enzebati' id='Note-Enzebati' cols='30' rows='2' style='resize: none;margin-right: 70px'></textarea>
+                <div class='row'>
+                    <label for='Note-Enzebati' class='col-sm-3'>ملاحضات : </label>
+                    <textarea name='Note-Enzebati' id='Note-Enzebati' cols='30' rows='2' style='resize: none;' class='form-control col-sm-7'></textarea>
+                </div>
                 <br>
-                <input type='submit' id='Submit-Enzebati' name='Submit-Enzebati' value='ثبت' class='btn btn-info'>
+                <center><input type='submit' id='Submit-Enzebati' name='Submit-Enzebati' value='ثبت' class='btn btn-info'></center>
             </form>
         </div>";
     }elseif(isset($_REQUEST['Criticism'])) {
@@ -398,57 +438,73 @@ function Panel_A()
         <div class='Window1'>
             <div align='center'><< فرم  تشویق >></div><br>
             <form action='' id='Form8'>
-                <label for='Class-List1'>کلاس : </label>
-                <select id='Class-List1' class='Class-List'></select>
-                <lass='for='Student-List1'>داش آموز : </label>
-                <select id='Student-List1' name='Student-List1'></select>
+                <div class='row'>
+                    <label for='Class-List1' class='col-sm-2'>کلاس : </label>
+                    <select id='Class-List1' class='Class-List custom-select col-sm-3'></select>
+                    <label for='Student-List1' class='col-sm-3'>داش آموز : </label>
+                    <select id='Student-List1' name='Student-List1' class='custom-select col-sm-3'></select>                
+                </div>
                 <br>
-                <label for='Day-Tashvigh'>روز : </label>
-                <select id='Day-Tashvigh' name='Day-Tashvigh'>
-                    <option value='شنبه'>شنبه</option>
-                    <option value='یکشنبه'>یکشنبه</option>
-                    <option value='دوشنبه'>دوشنبه</option>
-                    <option value='سه شنبه'>سه شنبه</option>
-                    <option value='چهارشنبه'>چهارشنبه</option>
-                    <option value='پنجشنبه'>پنجشنبه</option>
-                    <option value='جمعه'>جمعه</option>
-                </select>
+                <div class='row'>
+                    <label for='Day-Tashvigh' class='col-sm-3'>روز : </label>
+                    <select id='Day-Tashvigh' name='Day-Tashvigh' class='custom-select col-sm-5'>
+                        <option value='شنبه'>شنبه</option>
+                        <option value='یکشنبه'>یکشنبه</option>
+                        <option value='دوشنبه'>دوشنبه</option>
+                        <option value='سه شنبه'>سه شنبه</option>
+                        <option value='چهارشنبه'>چهارشنبه</option>
+                        <option value='پنجشنبه'>پنجشنبه</option>
+                        <option value='جمعه'>جمعه</option>
+                    </select>
+                </div>
                 <br>
-                <label for='Date-Tashvigh'>تاریخ : </label>
-                <input type='date' id='Date-Tashvigh' name='Date-Tashvigh' dir='ltr'>
+                <div class='row'>
+                    <label for='Date-Tashvigh' class='col-sm-3'>تاریخ : </label>
+                    <input type='date' id='Date-Tashvigh' name='Date-Tashvigh' class='form-control col-sm-5' dir='ltr'>
+                </div>
                 <br>
-                <label for='Note-Tashvigh'>ملاحضات : </label>
-                <textarea name='Note-Tashvigh' id='Note-Tashvigh' cols='30' rows='2' style='resize: none;margin-right: 70px'></textarea>
+                <div class='row'>
+                    <label for='Note-Tashvigh' class='col-sm-3'>ملاحضات : </label>
+                    <textarea name='Note-Tashvigh' id='Note-Tashvigh' cols='30' rows='2' style='resize: none' class='form-control col-sm-7'></textarea>
+                </div>
                 <br>
-                <input type='submit' id='Submit-Tashvigh' name='Submit-Tashvigh' value='ثبت' class='btn btn-info'>
+                <center><input type='submit' id='Submit-Tashvigh' name='Submit-Tashvigh' value='ثبت' class='btn btn-info'></center>
             </form>
         </div>
         <div class='Window1'>
             <div align='center'><< فرم  تذکر >></div><br>
             <form action='' id='Form9'>
-                <label for='Class-List2'>کلاس : </label>
-                <select id='Class-List2' class='Class-List'></select>
-                <label for='Student-List2'>داش آموز : </label>
-                <select id='Student-List2' name='Student-List2'></select>
+                <div class='row'>
+                    <label for='Class-List2' class='col-sm-2'>کلاس : </label>
+                    <select id='Class-List2' class='Class-List custom-select col-sm-3'></select>
+                    <label for='Student-List2' class='col-sm-3'>داش آموز : </label>
+                    <select id='Student-List2' name='Student-List2' class='col-sm-3'></select>
+                </div>
                 <br>
-                <label for='Day-Tazakor'>روز : </label>
-                <select id='Day-Tazakor' name='Day-Tazakor'>
-                    <option value='شنبه'>شنبه</option>
-                    <option value='یکشنبه'>یکشنبه</option>
-                    <option value='دوشنبه'>دوشنبه</option>
-                    <option value='سه شنبه'>سه شنبه</option>
-                    <option value='چهارشنبه'>چهارشنبه</option>
-                    <option value='پنجشنبه'>پنجشنبه</option>
-                    <option value='جمعه'>جمعه</option>
-                </select>
+                <div class='row'>
+                    <label for='Day-Tazakor' class='col-sm-3'>روز : </label>
+                    <select id='Day-Tazakor' name='Day-Tazakor' class='custom-select col-sm-5'>
+                        <option value='شنبه'>شنبه</option>
+                        <option value='یکشنبه'>یکشنبه</option>
+                        <option value='دوشنبه'>دوشنبه</option>
+                        <option value='سه شنبه'>سه شنبه</option>
+                        <option value='چهارشنبه'>چهارشنبه</option>
+                        <option value='پنجشنبه'>پنجشنبه</option>
+                        <option value='جمعه'>جمعه</option>
+                    </select>
+                </div>
                 <br>
-                <label for='Date-Tazakor'>تاریخ : </label>
-                <input type='date' id='Date-Tazakor' name='Date-Tazakor' dir='ltr'>
+                <div class='row'>
+                    <label for='Date-Tazakor' class='col-sm-3'>تاریخ : </label>
+                    <input type='date' id='Date-Tazakor' name='Date-Tazakor' class='form-control col-sm-5' dir='ltr'>
+                </div>
                 <br>
-                <label for='Note-Tazakor'>ملاحضات : </label>
-                <textarea name='Note-Tazakor' id='Note-Tazakor' cols='30' rows='2' style='resize: none;margin-right: 70px'></textarea>
+                <div class='row'>
+                    <label for='Note-Tazakor' class='col-sm-3'>ملاحضات : </label>
+                    <textarea name='Note-Tazakor' id='Note-Tazakor' cols='30' rows='2' style='resize: none' class='form-control col-sm-7'></textarea>
+                </div>
                 <br>
-                <input type='submit' id='Submit-Tazakor' name='Submit-Tazakor' value='ثبت' class='btn btn-info'>
+                <center><input type='submit' id='Submit-Tazakor' name='Submit-Tazakor' value='ثبت' class='btn btn-info'></center>
             </form>
         </div>";
     }elseif (isset($_REQUEST['Reminder'])){
@@ -456,60 +512,78 @@ function Panel_A()
         <div class='Window1'>
             <div align='center'><< فرم  تاخیر >></div><br>
             <form action='' method='post' id='Form6'>
-                <label for='Class-List1'>کلاس : </label>
-                <select id='Class-List1' class='Class-List'></select>
-                <label for='Student-List1'>داش آموز : </label>
-                <select id='Student-List1' name='Student-List1' required></select>
+                <div class='row'>
+                    <label for='Class-List1' class='col-sm-2'>کلاس : </label>
+                    <select id='Class-List1' class='Class-List custom-select col-sm-3'></select>
+                    <label for='Student-List1' class='col-sm-3'>داش آموز : </label>
+                    <select id='Student-List1' name='Student-List1' class='custom-select col-sm-3' required></select>
+                </div>
                 <br>
-                <label for='Day-Takhir'>روز : </label>
-                <select id='Day-Takhir' name='Day-Takhir' required>
-                <option value='شنبه'>شنبه</option>
-                <option value='یکشنبه'>یکشنبه</option>
-                <option value='دوشنبه'>دوشنبه</option>
-                <option value='سه شنبه'>سه شنبه</option>
-                <option value='چهارشنبه'>چهارشنبه</option>
-                <option value='پنجشنبه'>پنجشنبه</option>
-                <option value='جمعه'>جمعه</option>
-                </select>
+                <div class='row'>
+                    <label for='Day-Takhir' class='col-sm-3'>روز : </label>
+                    <select id='Day-Takhir' name='Day-Takhir' class='custom-select col-sm-5' required>
+                    <option value='شنبه'>شنبه</option>
+                    <option value='یکشنبه'>یکشنبه</option>
+                    <option value='دوشنبه'>دوشنبه</option>
+                    <option value='سه شنبه'>سه شنبه</option>
+                    <option value='چهارشنبه'>چهارشنبه</option>
+                    <option value='پنجشنبه'>پنجشنبه</option>
+                    <option value='جمعه'>جمعه</option>
+                    </select>
+                </div>
                 <br>
-                <label for='Date-Takhir'>تاریخ : </label>
-                <input type='date' id='Date-Takhir' name='Date-Takhir' dir='ltr' required>
+                <div class='row'>
+                    <label for='Date-Takhir' class='col-sm-3'>تاریخ : </label>
+                    <input type='date' id='Date-Takhir' name='Date-Takhir' class='form-control col-sm-5' dir='ltr' required>
+                </div>
                 <br>
-                <label for='Hour-Takhir'>چند ساعت : </label>
-                <input type='number' id='Hour-Takhir' name='Hour-Takhir' min='0' max='6' required>
+                <div class='row'>
+                    <label for='Hour-Takhir' class='col-sm-3'>چند ساعت : </label>
+                    <input type='number' id='Hour-Takhir' name='Hour-Takhir' class='form-control col-sm-5' min='0' max='6' required>
+                </div>
                 <br>
-                <label for='Note-Takhir'>ملاحضات : </label>
-                <textarea name='Note-Takhir' id='Note-Takhir' cols='30' rows='2' style='resize: none;margin-right: 70px' required></textarea>
+                <div class='row'>
+                    <label for='Note-Takhir' class='col-sm-3'>ملاحضات : </label>
+                    <textarea name='Note-Takhir' id='Note-Takhir' cols='30' rows='2' style='resize: none' class='form-control col-sm-7' required></textarea>
+                </div>
                 <br>
-                <input type='submit' id='Submit-Takhir' name='Submit-Takhir' value='ثبت' class='btn btn-info'>
+                <center><input type='submit' id='Submit-Takhir' name='Submit-Takhir' value='ثبت' class='btn btn-info'></center>
             </form>
         </div>
         <div class='Window1'>
             <div align='center'><< فرم  غیبت >></div><br>
             <form action='' id='Form7'>
-                <label for='Class-List2'>کلاس : </label>
-                <select id='Class-List2' class='Class-List'></select>
-                <label for='Student-List2'>داش آموز : </label>
-                <select id='Student-List2' name='Student-List2'></select>
+                <div class='row'>
+                <label for='Class-List2' class='col-sm-2'>کلاس : </label>
+                <select id='Class-List2' class='Class-List custom-select col-sm-3'></select>
+                <label for='Student-List2' class='col-sm-3'>داش آموز : </label>
+                <select id='Student-List2' name='Student-List2' class='custom-select col-sm-3'></select>                
+                </div>
                 <br>
-                <label for='Day-Gheybat'>روز : </label>
-                <select id='Day-Gheybat' name='Day-Gheybat'>
-                <option value='شنبه'>شنبه</option>
-                <option value='یکشنبه'>یکشنبه</option>
-                <option value='دوشنبه'>دوشنبه</option>
-                <option value='سه شنبه'>سه شنبه</option>
-                <option value='چهارشنبه'>چهارشنبه</option>
-                <option value='پنجشنبه'>پنجشنبه</option>
-                <option value='جمعه'>جمعه</option>
-                </select>
+                <div class='row'>
+                    <label for='Day-Gheybat' class='col-sm-3'>روز : </label>
+                    <select id='Day-Gheybat' name='Day-Gheybat' class='custom-select col-sm-5'>
+                        <option value='شنبه'>شنبه</option>
+                        <option value='یکشنبه'>یکشنبه</option>
+                        <option value='دوشنبه'>دوشنبه</option>
+                        <option value='سه شنبه'>سه شنبه</option>
+                        <option value='چهارشنبه'>چهارشنبه</option>
+                        <option value='پنجشنبه'>پنجشنبه</option>
+                        <option value='جمعه'>جمعه</option>
+                    </select>                
+                </div>
                 <br>
-                <label for='Date-Gheybat'>تاریخ : </label>
-                <input type='date' id='Date-Gheybat' name='Date-Gheybat' dir='ltr'>
+                <div class='row'>
+                    <label for='Date-Gheybat' class='col-sm-3'>تاریخ : </label>
+                    <input type='date' id='Date-Gheybat' name='Date-Gheybat' class='form-control col-sm-5' dir='ltr'>
+                </div>
                 <br>
-                <label for='Note-Gheybat'>ملاحضات : </label>
-                <textarea name='Note-Gheybat' id='Note-Gheybat' cols='30' rows='2' style='resize: none;margin-right: 70px'></textarea>
+                <div class='row'>
+                    <label for='Note-Gheybat' class='col-sm-3'>ملاحضات : </label>
+                    <textarea name='Note-Gheybat' id='Note-Gheybat' cols='30' rows='2' style='resize: none' class='form-control col-sm-7'></textarea>
+                </div>
                 <br>
-                <input type='submit' id='Submit-Gheybat' name='Submit-Gheybat' value='ثبت' class='btn btn-info'>
+                <center><input type='submit' id='Submit-Gheybat' name='Submit-Gheybat' value='ثبت' class='btn btn-info'></center>
             </form>
         </div>";
     }else{

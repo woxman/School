@@ -87,47 +87,45 @@ if (isset($_SESSION['Login']))
             </div>
             <div class="modal-body" align="right">
                 <form action="" dir="rtl" method="post" id="Form3">
-
-                    <label for="Name3">نام :</label>
-                    <input type="text" id="Name3" name="Name3">
-
-                    <br><br>
-
-                    <label for="Family3">نام خانوادگی :</label>
-                    <input type="text" id="Family3" name="Family3">
-
-                    <br><br>
-
-                    <label for="FatherName3">نام پدر :</label>
-                    <input type="text" id="FatherName3" name="FatherName3">
-
-                    <br><br>
-
-                    <label for="Expertise3">رشته :</label>
-                    <input type="text" id="Expertise3" name="Expertise3">
-
-                    <br><br>
-
-                    <label for="BirthDay3">تاریخ تولد :</label>
-                    <input type="date" id="BirthDay3" name="BirthDay3">
-
-                    <br><br>
-
-                    <label for="Phone3">تلفن :</label>
-                    <input type="text" id="Phone3" name="Phone3">
-
-                    <br><br>
-
-                    <label for="Address3">آدرس :</label>
-                    <input type="text" id="Address3" name="Address3">
-
-
+                    <div class="row">
+                        <label for="Name3" class="col-sm-3">نام :</label>
+                        <input type="text" id="Name3" name="Name3" class="form-control col-sm-5">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <label for="Family3" class="col-sm-3">نام خانوادگی :</label>
+                        <input type="text" id="Family3" name="Family3" class="form-control col-sm-5">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <label for="FatherName3" class="col-sm-3">نام پدر :</label>
+                        <input type="text" id="FatherName3" name="FatherName3" class="form-control col-sm-5">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <label for="Expertise3" class="col-sm-3">رشته :</label>
+                        <input type="text" id="Expertise3" name="Expertise3" class="form-control col-sm-5">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <label for="BirthDay3" class="col-sm-3">تاریخ تولد :</label>
+                        <input type="date" id="BirthDay3" name="BirthDay3" class="form-control col-sm-5">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <label for="Phone3" class="col-sm-3">تلفن :</label>
+                        <input type="text" id="Phone3" name="Phone3" class="form-control col-sm-5">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <label for="Address3" class="col-sm-3">آدرس :</label>
+                        <input type="text" id="Address3" name="Address3" class="form-control col-sm-5">
+                    </div>
                     <input type="text" id="Change3" name="Change3" hidden>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">خروج</button>
-                <input type="submit" class="btn btn-dark" value="تغییر" id="Send3" name="Send3">
+                <input type="submit" class="btn btn-info" value="تغییر" id="Send3" name="Send3">
                 </form>
             </div>
         </div>
