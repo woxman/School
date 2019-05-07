@@ -14,11 +14,12 @@ body{
     padding: 10px;
     width: 400px;
     border-radius: 10px;
-    background-color: antiquewhite;
+    background-color: white;
     direction: rtl;
     text-align: right;
     margin-left: 550px;
     margin-top: 10px;
+    margin-bottom: 40px;
 }
 
 .Window2{
@@ -26,10 +27,9 @@ body{
     padding: 10px;
     width: 950px;
     border-radius: 10px;
-    background-color: antiquewhite;
+    background-color: white;
     text-align: right;
     margin-left: 310px;
-
 }
 
 .Window3{

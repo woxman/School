@@ -129,13 +129,13 @@ if (isset($_POST['Day-Gheybat']))
 
 if (isset($_POST['Day-Tashvigh']))
 {
-    $res15=Insert_Gheybat($_POST['Student-List1'],$_POST['Day-Tashvigh'],$_POST['Date-Tashvigh'],$_POST['Note-Tashvigh']);
+    $res15=Insert_Tashvigh($_POST['Student-List1'],$_POST['Day-Tashvigh'],$_POST['Date-Tashvigh'],$_POST['Note-Tashvigh']);
     echo($res15);
 }
 
 if (isset($_POST['Day-Tazakor']))
 {
-    $res16=Insert_Gheybat($_POST['Student-List2'],$_POST['Day-Tazakor'],$_POST['Date-Tazakor'],$_POST['Note-Tazakor']);
+    $res16=Insert_Tazakor($_POST['Student-List2'],$_POST['Day-Tazakor'],$_POST['Date-Tazakor'],$_POST['Note-Tazakor']);
     echo($res16);
 }
 

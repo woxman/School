@@ -218,7 +218,7 @@ function Panel_A()
     if (isset($_REQUEST['Add']))
     {
         echo"
-        <form action='' method='post' class='Window1' id='Form1'>
+        <form action='' method='post' class='Window1' id='Form1' style='margin-bottom: 0px'>
             <label for='Name1'>نام :</label>
             <input type='text' id='Name1' name='Name1'>
             <br><br>
@@ -240,10 +240,10 @@ function Panel_A()
             <label for='Address1'>آدرس :</label>
             <input type='text' id='Address1' name='Address1'>
             <br><br>
-            <input type='submit' value='ثبت' id='Send1' name='Send1' class='btn btn-primary'>
+            <center><input type='submit' value='افزودن شخص' id='Send1' name='Send1' class='btn btn-primary'></center>
         </form>
         <br>
-        <div style='width: 1000px;border-bottom: 1px solid black;margin-left: 285px'></div>
+        <div style='width: 1000px;border-bottom: 1px solid #6c757d;margin-left: 285px'></div>
         <br>
         <form action='#' method='post' dir='rtl' class='Window2' id='Form2'>
             <label for='Name2' id='lable1'>نام</label>
@@ -261,9 +261,9 @@ function Panel_A()
             <textarea name='Phone2' id='Phone2' cols='10' rows='20' class='textarea input-sm' dir='ltr'></textarea>
             <textarea name='BirthDay2' id='BirthDay2' cols='10' rows='20' class='textarea input-sm' dir='ltr'></textarea>
             <textarea name='Address2' id='Address2' cols='10' rows='20' class='textarea input-sm'></textarea>
-            <br>
-            <input type='submit' value='ثبت' id='Send2' name='Send2' class='btn btn-primary'>
-        </form>";
+            <br><br>
+            <center><input type='submit' value='افزودن گروه' id='Send2' name='Send2' class='btn btn-primary'></center>
+        </form><br>";
     }elseif (isset($_REQUEST['Students'])) {
         A:
         $dbs_c=Connect_DB("Yes");
@@ -385,7 +385,7 @@ function Panel_A()
                 </select>
                 <br>
                 <label for='Date-Enzebati'>تاریخ : </label>
-                <input type='date' id='Date-Enzebati' name='Date-Tazakor' dir='ltr'>
+                <input type='date' id='Date-Enzebati' name='Date-Enzebati' dir='ltr'>
                 <br>
                 <label for='Note-Enzebati'>ملاحضات : </label>
                 <textarea name='Note-Enzebati' id='Note-Enzebati' cols='30' rows='2' style='resize: none;margin-right: 70px'></textarea>
@@ -405,13 +405,13 @@ function Panel_A()
                 <br>
                 <label for='Day-Tashvigh'>روز : </label>
                 <select id='Day-Tashvigh' name='Day-Tashvigh'>
-                <option value='شنبه'>شنبه</option>
-                <option value='یکشنبه'>یکشنبه</option>
-                <option value='دوشنبه'>دوشنبه</option>
-                <option value='سه شنبه'>سه شنبه</option>
-                <option value='چهارشنبه'>چهارشنبه</option>
-                <option value='پنجشنبه'>پنجشنبه</option>
-                <option value='جمعه'>جمعه</option>
+                    <option value='شنبه'>شنبه</option>
+                    <option value='یکشنبه'>یکشنبه</option>
+                    <option value='دوشنبه'>دوشنبه</option>
+                    <option value='سه شنبه'>سه شنبه</option>
+                    <option value='چهارشنبه'>چهارشنبه</option>
+                    <option value='پنجشنبه'>پنجشنبه</option>
+                    <option value='جمعه'>جمعه</option>
                 </select>
                 <br>
                 <label for='Date-Tashvigh'>تاریخ : </label>
@@ -433,13 +433,13 @@ function Panel_A()
                 <br>
                 <label for='Day-Tazakor'>روز : </label>
                 <select id='Day-Tazakor' name='Day-Tazakor'>
-                <option value='شنبه'>شنبه</option>
-                <option value='یکشنبه'>یکشنبه</option>
-                <option value='دوشنبه'>دوشنبه</option>
-                <option value='سه شنبه'>سه شنبه</option>
-                <option value='چهارشنبه'>چهارشنبه</option>
-                <option value='پنجشنبه'>پنجشنبه</option>
-                <option value='جمعه'>جمعه</option>
+                    <option value='شنبه'>شنبه</option>
+                    <option value='یکشنبه'>یکشنبه</option>
+                    <option value='دوشنبه'>دوشنبه</option>
+                    <option value='سه شنبه'>سه شنبه</option>
+                    <option value='چهارشنبه'>چهارشنبه</option>
+                    <option value='پنجشنبه'>پنجشنبه</option>
+                    <option value='جمعه'>جمعه</option>
                 </select>
                 <br>
                 <label for='Date-Tazakor'>تاریخ : </label>
@@ -679,8 +679,7 @@ function Insert_Takhir($SubId,$Day,$Date,$Hour,$Note)
     $qritr=mysqli_query($dbs_c, $qrit);
     if ($qritr)
     {
-        return("تمامی اطلاعات شما با موفقیت ثبت شد");
-
+        return("تاخیر با موفقیت ثبت شد");
     }
 }
 
@@ -688,13 +687,12 @@ function Insert_Gheybat($SubId,$Day,$Date,$Note)
 {
     $dbs_c=Connect_DB("No");
     global $DB_Table;
-    $qrit="INSERT INTO "."$DB_Table"."_Absenteeism(Day, Date, Note, SubId)
+    $qrigh="INSERT INTO "."$DB_Table"."_Absenteeism(Day, Date, Note, SubId)
              VALUES('$Day', '$Date', '$Note', '$SubId')";
-    $qritr=mysqli_query($dbs_c, $qrit);
-    if ($qritr)
+    $qrighr=mysqli_query($dbs_c, $qrigh);
+    if ($qrighr)
     {
-        return("فیلد با موفقیت افزوده شد");
-
+        return("غیبت با موفقیت ثبت شد");
     }
 }
 
@@ -702,13 +700,12 @@ function Insert_Tashvigh($SubId,$Day,$Date,$Note)
 {
     $dbs_c=Connect_DB("No");
     global $DB_Table;
-    $qrits="INSERT INTO "."$DB_Table"."_Encouragement(Day, Date, Note, SubId)
+    $qritsh="INSERT INTO "."$DB_Table"."_Encouragement(Day, Date, Note ,SubId)
              VALUES('$Day', '$Date', '$Note', '$SubId')";
-    $qritrs=mysqli_query($dbs_c, $qrits);
-    if ($qritrs)
+    $qritshr=mysqli_query($dbs_c, $qritsh);
+    if ($qritshr)
     {
-        return("فیلد با موفقیت افزوده شد");
-
+        return("تشویق با موفقیت ثبت شد");
     }
 }
 
@@ -721,8 +718,7 @@ function Insert_Tazakor($SubId,$Day,$Date,$Note)
     $qritrz=mysqli_query($dbs_c, $qritz);
     if ($qritrz)
     {
-        return("فیلد با موفقیت افزوده شد");
-
+        return("تذکر با موفقیت ثبت شد");
     }
 }
 
@@ -730,12 +726,12 @@ function Insert_Darsi($SubId,$Day,$Rust,$Date,$Note)
 {
     $dbs_c=Connect_DB("No");
     global $DB_Table;
-    $qrid="INSERT INTO "."$DB_Table"."_class_oligation(Day, Date, Rust, Note, SubId)
+    $qrid="INSERT INTO "."$DB_Table"."_Class_Obligation(Day, Rust, Date, Note, SubId)
              VALUES('$Day', '$Rust', '$Date', '$Note', '$SubId')";
     $qridr=mysqli_query($dbs_c, $qrid);
     if ($qridr)
     {
-        return("فیلد با موفقیت افزوده شد");
+        return("تعهد درسی با موفقیت ثبت شد");
 
     }
 }
@@ -744,13 +740,14 @@ function Insert_Enzebati($SubId,$Day,$Rust,$Date,$Note)
 {
     $dbs_c=Connect_DB("No");
     global $DB_Table;
-    $qrid="INSERT INTO "."$DB_Table"."_Dicipline_Oligation(Day, Date, Rust, Note, SubId)
+    $qrien="INSERT INTO "."$DB_Table"."_Discipline_Obligation(Day, Rust, Date, Note, SubId)
              VALUES('$Day', '$Rust', '$Date', '$Note', '$SubId')";
-    $qridr=mysqli_query($dbs_c, $qrid);
-    if ($qridr)
+    $qrienr=mysqli_query($dbs_c, $qrien);
+    if ($qrienr)
     {
-        return("فیلد با موفقیت افزوده شد");
-
+        return("تعهد انظباطی با موفقیت ثبت شد");
+    }else{
+        return("ناموفق");
     }
 }
 ?>

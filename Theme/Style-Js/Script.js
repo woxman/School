@@ -179,9 +179,9 @@ $(document).ready(function(){
             type: 'post',
             url: 'Function/Routing.php',
             data: $('#Form8').serialize(),
-            success: function (Gh) {
-                $("#Result_Tex").text(Gh);
-                //$("Form7 ").reset();
+            success: function (TSH) {
+                $("#Result_Tex").text(TSH);
+                //$("Form8 ").reset();
                 Animate_Box();
                 Show_Data();
             }
@@ -194,8 +194,8 @@ $(document).ready(function(){
             type: 'post',
             url: 'Function/Routing.php',
             data: $('#Form9').serialize(),
-            success: function (Gh) {
-                $("#Result_Tex").text(Gh);
+            success: function (TKH) {
+                $("#Result_Tex").text(TKH);
                 //$("Form9 ").reset();
                 Animate_Box();
                 Show_Data();
@@ -209,8 +209,8 @@ $(document).ready(function(){
             type: 'post',
             url: 'Function/Routing.php',
             data: $('#Form10').serialize(),
-            success: function (Gh) {
-                $("#Result_Tex").text(Gh);
+            success: function (DR) {
+                $("#Result_Tex").text(DR);
                 //$("Form10 ").reset();
                 Animate_Box();
                 Show_Data();
@@ -224,8 +224,8 @@ $(document).ready(function(){
             type: 'post',
             url: 'Function/Routing.php',
             data: $('#Form11').serialize(),
-            success: function (Gh) {
-                $("#Result_Tex").text(Gh);
+            success: function (EN) {
+                $("#Result_Tex").text(EN);
                 //$("Form11 ").reset();
                 Animate_Box();
                 Show_Data();
