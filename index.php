@@ -1,11 +1,13 @@
 <?php
 session_start();
+require_once "Function/Function.php";
 $msg_log="";
 if (isset($_REQUEST['Log-Out']))
 {
     session_destroy();
+    header('location:Index.php');
 }
-require_once "Function/Function.php";
+Login_Time(10000);
 if (file_exists("Function/Config.php")) {
     if (file_exists("Install")) {
         Delete_Folder("Install");
@@ -21,6 +23,7 @@ if (isset($_POST['Admins_Submit']))
     if ($Log_A=="Login_True")
     {
         $_SESSION["Login"]="True";
+        $_SESSION['timestamp']=time();
     }else{
         $msg_log="مشخصات وارد شده درست نمیباشد!";
     }
@@ -33,9 +36,13 @@ if (isset($_POST['Admins_Submit']))
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="Theme/Freamwork/bootstrap.min.css">
+    <link rel="stylesheet" href="Theme/Date-Picker/persianDatepicker-default.css">
     <script src="Theme/Freamwork/jquery.min.js"></script>
     <script src="Theme/Freamwork/bootstrap.min.js"></script>
     <script src="Theme/Style-Js/Script.js"></script>
+    <script src="Theme/Date-Picker/persianDatepicker.js"></script>
+    <script src="Theme/Date-Picker/ManageDatepicker.js"></script>
+    <script src=""></script>
     <link rel="stylesheet" href="Theme/Style-Js/Style.css">
     <title>پنل</title>
 </head>
@@ -74,6 +81,7 @@ if (isset($_SESSION['Login']))
     ";
 }
 ?>
+<a href="http://Pendara.hekta.ir" target="_blank"><div id="Copy_Right">Pendara</div></a>
 <!-----------------------------------MassageBox_Result------------------------->
 <div id="Result_Box" class="alert-info"><p class="alert-link" id="Result_Tex"></p></div>
 <!-----------------------------------MassageBox_Result------------------------->
@@ -109,7 +117,7 @@ if (isset($_SESSION['Login']))
                     <br>
                     <div class="row">
                         <label for="BirthDay3" class="col-sm-3">تاریخ تولد :</label>
-                        <input type="date" id="BirthDay3" name="BirthDay3" class="form-control col-sm-5">
+                        <input type="text" id="BirthDay3" name="BirthDay3" class="form-control col-sm-5 usage" dir="ltr">
                     </div>
                     <br>
                     <div class="row">

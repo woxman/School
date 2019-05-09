@@ -115,6 +115,16 @@ if (isset($_POST['Student-List']))
     }
 }
 
+if (isset($_POST['Student-List-3']))
+{
+    $res12=Get_Student_List($_POST['Student-List-3']);
+    echo"<option><></option>";
+    while ($row=mysqli_fetch_array($res12))
+    {
+        echo"<option value='".$row['id']."'>".$row['Name']." ".$row['Family']."</option>";
+    }
+}
+
 if (isset($_POST['Day-Takhir']))
 {
     $res13=Insert_Takhir($_POST['Student-List1'],$_POST['Day-Takhir'],$_POST['Date-Takhir'],$_POST['Hour-Takhir'],$_POST['Note-Takhir']);

@@ -241,7 +241,7 @@ function Panel_A()
             <br>
             <div class='row'>
                 <label for='BirthDay1' class='col-sm-4'>تاریخ تولد :</label>
-                <input type='date' id='BirthDay1' name='BirthDay1' class='form-control col-sm-6'>
+                <input type='text' id='BirthDay1' name='BirthDay1' class='form-control col-sm-6 usage' dir='ltr' >
             </div>
             <br>
             <div class='row'>
@@ -272,10 +272,10 @@ function Panel_A()
                 <textarea name='Name2' id='Name2' cols='10' rows='20' class='textarea input-sm form-control col'></textarea>
                 <textarea name='Family2' id='Family2' cols='10' rows='20' class='textarea input-sm form-control col'></textarea>
                 <textarea name='FatherName2' id='FatherName2' cols='10' rows='20' class='textarea input-sm form-control col'></textarea>
-                <textarea name='Expertise2' id='Expertise2' cols='10' rows='20' class='textarea input-sm form-control col'></textarea>
-                <textarea name='Phone2' id='Phone2' cols='10' rows='20' class='textarea input-sm form-control col' dir='ltr'></textarea>
-                <textarea name='BirthDay2' id='BirthDay2' cols='10' rows='20' class='textarea input-sm form-control col' dir='ltr'></textarea>
-                <textarea name='Address2' id='Address2' cols='10' rows='20' class='textarea input-sm form-control col'></textarea>
+                <textarea name='Expertise2' id='Expertise2' cols='10' rows='20' class='textarea input-sm form-control col' placeholder='دوازدهم کامپیوتر'></textarea>
+                <textarea name='Phone2' id='Phone2' cols='10' rows='20' class='textarea input-sm form-control col' dir='ltr' placeholder='09184899437'></textarea>
+                <textarea name='BirthDay2' id='BirthDay2' cols='10' rows='20' class='textarea input-sm form-control col' dir='ltr' placeholder='1397/12/21'></textarea>
+                <textarea name='Address2' id='Address2' cols='10' rows='20' class='textarea input-sm form-control col' placeholder='ساوه - مطهری'></textarea>
             </div>
             <br>
             <center><input type='submit' value='افزودن گروه' id='Send2' name='Send2' class='btn btn-info'></center>
@@ -324,10 +324,10 @@ function Panel_A()
             <br>
             <div class='row'>
                 <label for='New_Expertises' class='col-sm-4'>پارامتر جدید :</label>
-                <input type='text' id='New_Expertises' name='New_Expertises' class='form-control col-sm-5'>
+                <input type='text' id='New_Expertises' name='New_Expertises' class='form-control col-sm-5' required>
             </div>
             <br>
-            <center><input type='submit' class='btn btn-info' value='تغییر' id='Send4' name='Send4'></center>
+            <center><input type='submit' class='btn btn-info' value='تغییر گروه' id='Send4' name='Send4'></center>
         </form>
         <form method='post' class='Window1' id='Form5'>
             <div class='row'>
@@ -338,7 +338,49 @@ function Panel_A()
             <center><input type='submit' class='btn btn-info' value='پاک کردن گروه' id='Send5' name='Send5'></center>
         </form>";
     }elseif (isset($_REQUEST['Status'])) {
-        echo ("<p style='margin-left: 60%'>Vazeiat Koli Danesh Amoz</p>");
+        echo"
+            <div class='Window3' dir='rtl'>
+                <div class='row'>
+                    <label for='Class-List3' class='col-sm-2'>کلاس : </label>
+                    <select id='Class-List3' class='Class-List custom-select col-sm-3'></select>
+                    <label for='Student-List3' class='col-sm-3'>دانش آموز : </label>
+                    <select id='Student-List3' name='Student-List1' class='custom-select col-sm-3 Student_Name'></select>
+                    <br>
+                    <div class='col-sm-12'><hr></div>
+                    <br>
+                    <div align='center' class='col-sm-12'><<  لیست تعهدات درسی >></div>
+                    <br>
+                    <div class='Tahodat_D'></div><br>
+                    <div class='col-sm-12'><hr></div>
+                    <br>
+                    <div align='center' class='col-sm-12'><<  لیست تعهدات انظباطی >></div>
+                    <br>
+                    <div class='Tahodat_E'></div><br>
+                    <div class='col-sm-12'><hr></div>
+                    <br>
+                    <div align='center' class='col-sm-12'><<  لیست غیبت ها >></div>
+                    <br>
+                    <div class='Ghrybatha'></div><br>
+                    <div class='col-sm-12'><hr></div>
+                    <br>
+                    <div align='center' class='col-sm-12'><<  لیست تاخیر ها >></div>
+                    <br>
+                    <div class='Takhirat'></div>
+                    <br>
+                    <div class='col-sm-12'><hr></div>
+                    <br>
+                    <div align='center' class='col-sm-12'><<  لیست تشویق ها >></div>
+                    <br>
+                    <div class='Tashvighat'></div>
+                    <br>
+                    <div class='col-sm-12'><hr></div>
+                    <br>
+                    <div align='center' class='col-sm-12'><<  لیست تذکر ها >></div>
+                    <br>
+                    <div class='Tazakorat'></div> 
+                </div>
+            </div>
+        ";
     }elseif(isset($_REQUEST['Obligation'])) {
         echo "
         <div class='Window1'>
@@ -347,13 +389,13 @@ function Panel_A()
                 <div class='row'>
                     <label for='Class-List1' class='col-sm-2'>کلاس : </label>
                     <select id='Class-List1' class='Class-List custom-select col-sm-3'></select>
-                    <label for='Student-List1' class='col-sm-3'>داش آموز : </label>
-                    <select id='Student-List1' name='Student-List1' class='custom-select col-sm-3'></select>
+                    <label for='Student-List1' class='col-sm-3'>دانش آموز : </label>
+                    <select id='Student-List1' name='Student-List1' class='custom-select col-sm-3' required></select>
                 </div>
                 <br>
                 <div class='row'>
                     <label for='Day-Darsi' class='col-sm-3'>روز : </label>
-                    <select id='Day-Darsi' name='Day-Darsi' class='custom-select col-sm-5'>
+                    <select id='Day-Darsi' name='Day-Darsi' class='custom-select col-sm-5'  required>
                         <option value='شنبه'>شنبه</option>
                         <option value='یکشنبه'>یکشنبه</option>
                         <option value='دوشنبه'>دوشنبه</option>
@@ -366,7 +408,7 @@ function Panel_A()
                 <br>
                 <div class='row'>
                     <label for='Rust-Darsi' class='col-sm-3'>زنگ چندم : </label>
-                    <select name='Rust-Darsi' id='Rust-Darsi' class='custom-select col-sm-5'>
+                    <select name='Rust-Darsi' id='Rust-Darsi' class='custom-select col-sm-5' required>
                         <option value='اول'>اول</option>
                         <option value='دوم'>دوم</option>
                         <option value='سوم'>سوم</option>
@@ -376,12 +418,12 @@ function Panel_A()
                 <br>
                 <div class='row'>
                     <label for='Date-Darsi' class='col-sm-3'>تاریخ : </label>
-                    <input type='date' id='Date-Darsi' name='Date-Darsi' dir='ltr' class='form-control col-sm-5'>
+                    <input type='text' id='Date-Darsi' name='Date-Darsi' dir='ltr' class='form-control col-sm-5 usage' required>
                 </div>
                 <br>
                 <div class='row'>
                     <label for='Note-Darsi' class='col-sm-3'>ملاحضات : </label>
-                    <textarea name='Note-Darsi' id='Note-Darsi' cols='30' rows='2' style='resize: none;' class='form-control col-sm-7'></textarea>
+                    <textarea name='Note-Darsi' id='Note-Darsi' cols='30' rows='2' style='resize: none;' class='form-control col-sm-7' required></textarea>
                 </div>
                 <br>
                 <center><input type='submit' id='Submit-Darsi' name='Submit-Darsi' value='ثبت' class='btn btn-info'></center>
@@ -393,13 +435,13 @@ function Panel_A()
                 <div class='row'>
                     <label for='Class-List2' class='col-sm-2'>کلاس : </label>
                     <select id='Class-List2' class='Class-List custom-select col-sm-3'></select>
-                    <label for='Student-List2' class='col-sm-3'>داش آموز : </label>
-                    <select id='Student-List2' name='Student-List2' class='custom-select col-sm-3'></select>
+                    <label for='Student-List2' class='col-sm-3'>دانش آموز : </label>
+                    <select id='Student-List2' name='Student-List2' class='custom-select col-sm-3' required></select>
                 </div>
                 <br>
                 <div class='row'>
                     <label for='Day-Enzebati' class='col-sm-3'>روز : </label>
-                    <select id='Day-Enzebati' name='Day-Enzebati' class='custom-select col-sm-5'>
+                    <select id='Day-Enzebati' name='Day-Enzebati' class='custom-select col-sm-5' required>
                         <option value='شنبه'>شنبه</option>
                         <option value='یکشنبه'>یکشنبه</option>
                         <option value='دوشنبه'>دوشنبه</option>
@@ -412,7 +454,7 @@ function Panel_A()
                 <br>
                 <div class='row'>
                     <label for='Rust-Enzebati' class='col-sm-3'>زنگ چندم : </label>
-                    <select name='Rust-Enzebati' id='Rust-Enzebati' class='custom-select col-sm-5'>
+                    <select name='Rust-Enzebati' id='Rust-Enzebati' class='custom-select col-sm-5' required>
                         <option value='اول'>اول</option>
                         <option value='دوم'>دوم</option>
                         <option value='سوم'>سوم</option>
@@ -422,12 +464,12 @@ function Panel_A()
                 <br>
                 <div class='row'>
                     <label for='Date-Enzebati' class='col-sm-3'>تاریخ : </label>
-                    <input type='date' id='Date-Enzebati' class='form-control col-sm-5' name='Date-Enzebati' dir='ltr'>
+                    <input type='text' id='Date-Enzebati' class='form-control col-sm-5 usage' name='Date-Enzebati' dir='ltr' required>
                 </div>
                 <br>
                 <div class='row'>
                     <label for='Note-Enzebati' class='col-sm-3'>ملاحضات : </label>
-                    <textarea name='Note-Enzebati' id='Note-Enzebati' cols='30' rows='2' style='resize: none;' class='form-control col-sm-7'></textarea>
+                    <textarea name='Note-Enzebati' id='Note-Enzebati' cols='30' rows='2' style='resize: none;' class='form-control col-sm-7' required></textarea>
                 </div>
                 <br>
                 <center><input type='submit' id='Submit-Enzebati' name='Submit-Enzebati' value='ثبت' class='btn btn-info'></center>
@@ -441,13 +483,13 @@ function Panel_A()
                 <div class='row'>
                     <label for='Class-List1' class='col-sm-2'>کلاس : </label>
                     <select id='Class-List1' class='Class-List custom-select col-sm-3'></select>
-                    <label for='Student-List1' class='col-sm-3'>داش آموز : </label>
-                    <select id='Student-List1' name='Student-List1' class='custom-select col-sm-3'></select>                
+                    <label for='Student-List1' class='col-sm-3'>دانش آموز : </label>
+                    <select id='Student-List1' name='Student-List1' class='custom-select col-sm-3' required></select>                
                 </div>
                 <br>
                 <div class='row'>
                     <label for='Day-Tashvigh' class='col-sm-3'>روز : </label>
-                    <select id='Day-Tashvigh' name='Day-Tashvigh' class='custom-select col-sm-5'>
+                    <select id='Day-Tashvigh' name='Day-Tashvigh' class='custom-select col-sm-5' required>
                         <option value='شنبه'>شنبه</option>
                         <option value='یکشنبه'>یکشنبه</option>
                         <option value='دوشنبه'>دوشنبه</option>
@@ -460,12 +502,12 @@ function Panel_A()
                 <br>
                 <div class='row'>
                     <label for='Date-Tashvigh' class='col-sm-3'>تاریخ : </label>
-                    <input type='date' id='Date-Tashvigh' name='Date-Tashvigh' class='form-control col-sm-5' dir='ltr'>
+                    <input type='text' id='Date-Tashvigh' name='Date-Tashvigh' class='form-control col-sm-5 usage' dir='ltr' required>
                 </div>
                 <br>
                 <div class='row'>
                     <label for='Note-Tashvigh' class='col-sm-3'>ملاحضات : </label>
-                    <textarea name='Note-Tashvigh' id='Note-Tashvigh' cols='30' rows='2' style='resize: none' class='form-control col-sm-7'></textarea>
+                    <textarea name='Note-Tashvigh' id='Note-Tashvigh' cols='30' rows='2' style='resize: none' class='form-control col-sm-7' required></textarea>
                 </div>
                 <br>
                 <center><input type='submit' id='Submit-Tashvigh' name='Submit-Tashvigh' value='ثبت' class='btn btn-info'></center>
@@ -477,13 +519,13 @@ function Panel_A()
                 <div class='row'>
                     <label for='Class-List2' class='col-sm-2'>کلاس : </label>
                     <select id='Class-List2' class='Class-List custom-select col-sm-3'></select>
-                    <label for='Student-List2' class='col-sm-3'>داش آموز : </label>
-                    <select id='Student-List2' name='Student-List2' class='col-sm-3'></select>
+                    <label for='Student-List2' class='col-sm-3'>دانش آموز : </label>
+                    <select id='Student-List2' name='Student-List2' class='custom-select col-sm-3' required></select>
                 </div>
                 <br>
                 <div class='row'>
                     <label for='Day-Tazakor' class='col-sm-3'>روز : </label>
-                    <select id='Day-Tazakor' name='Day-Tazakor' class='custom-select col-sm-5'>
+                    <select id='Day-Tazakor' name='Day-Tazakor' class='custom-select col-sm-5' required>
                         <option value='شنبه'>شنبه</option>
                         <option value='یکشنبه'>یکشنبه</option>
                         <option value='دوشنبه'>دوشنبه</option>
@@ -496,12 +538,12 @@ function Panel_A()
                 <br>
                 <div class='row'>
                     <label for='Date-Tazakor' class='col-sm-3'>تاریخ : </label>
-                    <input type='date' id='Date-Tazakor' name='Date-Tazakor' class='form-control col-sm-5' dir='ltr'>
+                    <input type='text' id='Date-Tazakor' name='Date-Tazakor' class='form-control col-sm-5 usage' dir='ltr' required>
                 </div>
                 <br>
                 <div class='row'>
                     <label for='Note-Tazakor' class='col-sm-3'>ملاحضات : </label>
-                    <textarea name='Note-Tazakor' id='Note-Tazakor' cols='30' rows='2' style='resize: none' class='form-control col-sm-7'></textarea>
+                    <textarea name='Note-Tazakor' id='Note-Tazakor' cols='30' rows='2' style='resize: none' class='form-control col-sm-7' required></textarea>
                 </div>
                 <br>
                 <center><input type='submit' id='Submit-Tazakor' name='Submit-Tazakor' value='ثبت' class='btn btn-info'></center>
@@ -515,7 +557,7 @@ function Panel_A()
                 <div class='row'>
                     <label for='Class-List1' class='col-sm-2'>کلاس : </label>
                     <select id='Class-List1' class='Class-List custom-select col-sm-3'></select>
-                    <label for='Student-List1' class='col-sm-3'>داش آموز : </label>
+                    <label for='Student-List1' class='col-sm-3'>دانش آموز : </label>
                     <select id='Student-List1' name='Student-List1' class='custom-select col-sm-3' required></select>
                 </div>
                 <br>
@@ -534,7 +576,7 @@ function Panel_A()
                 <br>
                 <div class='row'>
                     <label for='Date-Takhir' class='col-sm-3'>تاریخ : </label>
-                    <input type='date' id='Date-Takhir' name='Date-Takhir' class='form-control col-sm-5' dir='ltr' required>
+                    <input type='text' id='Date-Takhir' name='Date-Takhir' class='form-control col-sm-5 usage' dir='ltr' required>
                 </div>
                 <br>
                 <div class='row'>
@@ -556,13 +598,13 @@ function Panel_A()
                 <div class='row'>
                 <label for='Class-List2' class='col-sm-2'>کلاس : </label>
                 <select id='Class-List2' class='Class-List custom-select col-sm-3'></select>
-                <label for='Student-List2' class='col-sm-3'>داش آموز : </label>
-                <select id='Student-List2' name='Student-List2' class='custom-select col-sm-3'></select>                
+                <label for='Student-List2' class='col-sm-3'>دانش آموز : </label>
+                <select id='Student-List2' name='Student-List2' class='custom-select col-sm-3' required></select>                
                 </div>
                 <br>
                 <div class='row'>
                     <label for='Day-Gheybat' class='col-sm-3'>روز : </label>
-                    <select id='Day-Gheybat' name='Day-Gheybat' class='custom-select col-sm-5'>
+                    <select id='Day-Gheybat' name='Day-Gheybat' class='custom-select col-sm-5' required>
                         <option value='شنبه'>شنبه</option>
                         <option value='یکشنبه'>یکشنبه</option>
                         <option value='دوشنبه'>دوشنبه</option>
@@ -575,12 +617,12 @@ function Panel_A()
                 <br>
                 <div class='row'>
                     <label for='Date-Gheybat' class='col-sm-3'>تاریخ : </label>
-                    <input type='date' id='Date-Gheybat' name='Date-Gheybat' class='form-control col-sm-5' dir='ltr'>
+                    <input type='text' id='Date-Gheybat' name='Date-Gheybat' class='form-control col-sm-5 usage' dir='ltr' required>
                 </div>
                 <br>
                 <div class='row'>
                     <label for='Note-Gheybat' class='col-sm-3'>ملاحضات : </label>
-                    <textarea name='Note-Gheybat' id='Note-Gheybat' cols='30' rows='2' style='resize: none' class='form-control col-sm-7'></textarea>
+                    <textarea name='Note-Gheybat' id='Note-Gheybat' cols='30' rows='2' style='resize: none' class='form-control col-sm-7' required></textarea>
                 </div>
                 <br>
                 <center><input type='submit' id='Submit-Gheybat' name='Submit-Gheybat' value='ثبت' class='btn btn-info'></center>
@@ -754,6 +796,8 @@ function Insert_Takhir($SubId,$Day,$Date,$Hour,$Note)
     if ($qritr)
     {
         return("تاخیر با موفقیت ثبت شد");
+    }else{
+        return("ناموفق!");
     }
 }
 
@@ -767,6 +811,8 @@ function Insert_Gheybat($SubId,$Day,$Date,$Note)
     if ($qrighr)
     {
         return("غیبت با موفقیت ثبت شد");
+    }else{
+        return("ناموفق!");
     }
 }
 
@@ -780,6 +826,8 @@ function Insert_Tashvigh($SubId,$Day,$Date,$Note)
     if ($qritshr)
     {
         return("تشویق با موفقیت ثبت شد");
+    }else{
+        return("ناموفق!");
     }
 }
 
@@ -793,6 +841,8 @@ function Insert_Tazakor($SubId,$Day,$Date,$Note)
     if ($qritrz)
     {
         return("تذکر با موفقیت ثبت شد");
+    }else{
+        return("ناموفق!");
     }
 }
 
@@ -806,7 +856,8 @@ function Insert_Darsi($SubId,$Day,$Rust,$Date,$Note)
     if ($qridr)
     {
         return("تعهد درسی با موفقیت ثبت شد");
-
+    }else{
+        return("ناموفق!");
     }
 }
 
@@ -821,7 +872,18 @@ function Insert_Enzebati($SubId,$Day,$Rust,$Date,$Note)
     {
         return("تعهد انظباطی با موفقیت ثبت شد");
     }else{
-        return("ناموفق");
+        return("ناموفق!");
+    }
+}
+
+function Login_Time($idletime)
+{
+    if (isset($_SESSION['timestamp']))
+    {
+        if (time()-$_SESSION['timestamp']>$idletime){
+            session_destroy();
+            header('location:Index.php');
+        }
     }
 }
 ?>

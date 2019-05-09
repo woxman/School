@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3743fa9-30a1-4241-9730-45b9537256af" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Function/Function.php" beforeDir="false" afterPath="$PROJECT_DIR$/Function/Function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Function/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/Function/Routing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Theme/Font/ur.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Theme/Style-Js/Script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Theme/Style-Js/Script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Theme/Style-Js/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Theme/Style-Js/Style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
@@ -17,26 +21,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="121" column="93" selection-start-line="121" selection-start-column="93" selection-end-line="121" selection-end-column="93" />
+            <state relative-caret-position="153">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Theme/Style-Js/Script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="207" column="16" lean-forward="true" selection-start-line="207" selection-start-column="16" selection-end-line="207" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Function/Function.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="259" column="66" lean-forward="true" selection-start-line="259" selection-start-column="66" selection-end-line="259" selection-end-column="66" />
+            <state relative-caret-position="17">
+              <caret line="352" column="41" lean-forward="true" selection-start-line="352" selection-start-column="41" selection-end-line="352" selection-end-column="41" />
               <folding>
                 <element signature="e#1139#1229#0#PHP" />
                 <element signature="n#style#0;n#i#0;n#div#0;n#a#0;n#!!top" expanded="true" />
@@ -58,16 +53,26 @@
                 <element signature="n#style#0;n#i#0;n#div#0;n#a#0;n#!!top" expanded="true" />
                 <element signature="e#126#132#0" expanded="true" />
                 <element signature="e#132#138#0" expanded="true" />
-                <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#div#4;n#form#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#div#4;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Theme/Style-Js/Script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="278" column="26" lean-forward="true" selection-start-line="278" selection-start-column="26" selection-end-line="278" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Function/Routing.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -75,17 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Theme/Style-Js/Style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Function/Routing.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="149" column="104" selection-start-line="149" selection-start-column="104" selection-end-line="149" selection-end-column="104" />
+            <state relative-caret-position="731">
+              <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -102,12 +98,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ins</find>
-      <find>&quot;INSERT INTO &quot;</find>
-      <find>pen</find>
-      <find>1</find>
-      <find>I</find>
-      <find>ge</find>
       <find>sss</find>
       <find>set</find>
       <find>Create</find>
@@ -117,7 +107,6 @@
       <find>SELECT</find>
       <find>WHERE</find>
       <find>Delete</find>
-      <find>افزودن</find>
       <find>Now</find>
       <find>Form4</find>
       <find>NE</find>
@@ -132,6 +121,13 @@
       <find>Tashvigh</find>
       <find>Darsi</find>
       <find>Enze</find>
+      <find>تغییر</find>
+      <find>افزودن</find>
+      <find>تعهد</find>
+      <find>Status</find>
+      <find>Cop</find>
+      <find>Group</find>
+      <find>Student-List</find>
     </findStrings>
     <replaceStrings>
       <replace>Student</replace>
@@ -153,13 +149,13 @@
         <option value="$PROJECT_DIR$/Theme/Freamwork/bootstrap.min.js" />
         <option value="$PROJECT_DIR$/Test.html" />
         <option value="$PROJECT_DIR$/Function/Config.php" />
-        <option value="$PROJECT_DIR$/Test.php" />
         <option value="$PROJECT_DIR$/Install/Install.php" />
+        <option value="$PROJECT_DIR$/Test.php" />
+        <option value="$PROJECT_DIR$/Theme/Style-Js/Style.css" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Theme/Style-Js/Script.js" />
         <option value="$PROJECT_DIR$/Function/Routing.php" />
-        <option value="$PROJECT_DIR$/Theme/Style-Js/Style.css" />
         <option value="$PROJECT_DIR$/Function/Function.php" />
-        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -167,8 +163,8 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="60" />
-    <option name="y" value="-18" />
+    <option name="x" value="-126" />
+    <option name="y" value="101" />
     <option name="width" value="1382" />
     <option name="height" value="745" />
   </component>
@@ -178,7 +174,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -189,12 +184,24 @@
             <path>
               <item name="H-Gh" type="b2602c69:ProjectViewProjectNode" />
               <item name="H-Gh" type="462c0819:PsiDirectoryNode" />
-              <item name="Function" type="462c0819:PsiDirectoryNode" />
+              <item name="Contact" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H-Gh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H-Gh" type="462c0819:PsiDirectoryNode" />
+              <item name="Contact" type="462c0819:PsiDirectoryNode" />
+              <item name="Image" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="H-Gh" type="b2602c69:ProjectViewProjectNode" />
               <item name="H-Gh" type="462c0819:PsiDirectoryNode" />
               <item name="Theme" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H-Gh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H-Gh" type="462c0819:PsiDirectoryNode" />
+              <item name="Theme" type="462c0819:PsiDirectoryNode" />
+              <item name="Font" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="H-Gh" type="b2602c69:ProjectViewProjectNode" />
@@ -206,6 +213,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -264,12 +272,16 @@
       <workItem from="1557063714457" duration="12516000" />
       <workItem from="1557120159668" duration="1371000" />
       <workItem from="1557161031903" duration="7074000" />
-      <workItem from="1557230745279" duration="14868000" />
+      <workItem from="1557230745279" duration="15069000" />
+      <workItem from="1557328844557" duration="1270000" />
+      <workItem from="1557387505707" duration="1989000" />
+      <workItem from="1557408402090" duration="9699000" />
+      <workItem from="1557431078970" duration="2537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229767000" />
+    <option name="totallyTimeSpent" value="245463000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -358,25 +370,45 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Install/Install.php" />
-    <entry file="file://$PROJECT_DIR$/Test.php" />
+    <entry file="file://$PROJECT_DIR$/Test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Theme/Style-Js/Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Function/Routing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="121" column="93" selection-start-line="121" selection-start-column="93" selection-end-line="121" selection-end-column="93" />
+        <state relative-caret-position="153">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Theme/Style-Js/Script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="207" column="16" lean-forward="true" selection-start-line="207" selection-start-column="16" selection-end-line="207" selection-end-column="16" />
+        <state relative-caret-position="352">
+          <caret line="278" column="26" lean-forward="true" selection-start-line="278" selection-start-column="26" selection-end-line="278" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Function/Function.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="259" column="66" lean-forward="true" selection-start-line="259" selection-start-column="66" selection-end-line="259" selection-end-column="66" />
+        <state relative-caret-position="17">
+          <caret line="352" column="41" lean-forward="true" selection-start-line="352" selection-start-column="41" selection-end-line="352" selection-end-column="41" />
           <folding>
             <element signature="e#1139#1229#0#PHP" />
             <element signature="n#style#0;n#i#0;n#div#0;n#a#0;n#!!top" expanded="true" />
@@ -398,30 +430,8 @@
             <element signature="n#style#0;n#i#0;n#div#0;n#a#0;n#!!top" expanded="true" />
             <element signature="e#126#132#0" expanded="true" />
             <element signature="e#132#138#0" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#4;n#form#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#4;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Theme/Style-Js/Style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Function/Routing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="149" column="104" selection-start-line="149" selection-start-column="104" selection-end-line="149" selection-end-column="104" />
         </state>
       </provider>
     </entry>

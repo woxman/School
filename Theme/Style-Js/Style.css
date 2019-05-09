@@ -1,9 +1,13 @@
 @font-face {
-    font-family: ur;
-    src: url("../Font/ur.ttf");
+    font-family: fa;
+    src: url("../Font/fa1.ttf");
+}
+@font-face {
+    font-family: en;
+    src: url("../Font/en.ttf");
 }
 body{
-    font-family: ur;
+    font-family: fa;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -30,6 +34,7 @@ body{
     background-color: white;
     text-align: right;
     margin-left: 310px;
+
 }
 
 .Window3{
@@ -46,6 +51,20 @@ body{
     margin-right: 7px;
 }
 
+#Copy_Right{
+    border: 1px solid black;
+    width: 200px;
+    height: 80px;
+    background-image: linear-gradient(to right top, #f4c116, #f2b813, #f0af12, #eea712, #eb9e12);
+    position: fixed;
+    right: -90px;
+    bottom: -2px;
+    transform: rotate(-43deg);
+    opacity: 0.6;
+    padding-left: 40px;
+    padding-top: 5px;
+    font-family: en;
+}
 #Install_Window{
     border: 1px solid black;
     border-radius: 5px;

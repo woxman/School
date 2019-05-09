@@ -259,6 +259,34 @@ $(document).ready(function(){
             }
         });
     });
+
+    $('#Class-List3').on("change",function () {
+        var Group_School=$("#Class-List3").val();
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: 'Student-List-3='+Group_School,
+            success: function (data11) {
+                $('#Student-List3').children().remove();
+                $('#Student-List3').append(data11);
+            }
+        });
+    });
+
+
+    $('.Student_Name').on("change",function () {
+        var Student_Name=$(".Student_Name").val();
+        alert(Student_Name);
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: 'Student-List='+Group_School,
+            success: function (data11) {
+                $('#Student-List2').children().remove();
+                $('#Student-List2').append(data11);
+            }
+        });
+    });
 //-----------------------Form_Submit----------------------------
 //-----------------------Function----------------------------
     function Animate_Box()
