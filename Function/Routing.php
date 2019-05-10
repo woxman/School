@@ -40,23 +40,24 @@ if (isset($_POST['Group_Delete']))
     echo($res6);
 }
 #-------------------Delete_Update--------------
-if (isset($_POST['TD']))
+/*if (isset($_POST['TD']))
 {
     global $db;
     $res7=Read_Data();
-    echo"<tr>
-        <th>نام</th>
-        <th>نام خانوادگی</th>
-        <th>نام پدر</th>
-        <th>رشته</th>
-        <th>تاریخ تولد</th>
-        <th>تلفن</th>
-        <th>آدرس</th>
-        <th colspan='2'>تغییرات</th>
-        </tr>";
+    echo("        <table class='table table-striped table-bordered' style='text-align: center' dir='rtl' id='Table_Data'>");
+    echo("            <tr>");
+    echo("                <th>نام</th>");
+    echo("                <th>نام خانوادگی</th>");
+    echo("                <th>نام پدر</th>");
+    echo("                <th>رشته</th>");
+    echo("                <th>تاریخ تولد</th>");
+    echo("                <th>تلفن</th>");
+    echo("                <th>آدرس</th>");
+    echo("                <th colspan='2'>تغییرات</th>");
+    echo("            </tr>");
+    echo("            <tr id='Td_Table'>");
     while ($row=mysqli_fetch_array($res7))
     {
-        echo "<tr>";
         echo "<td>".$row['Name']."</td>";
         echo "<td>".$row['Family']."</td>";
         echo "<td>".$row['FatherName']."</td>";
@@ -68,6 +69,68 @@ if (isset($_POST['TD']))
         echo "<td>"."<button type='button' class='btn myBtn Update' id='".$row['id']."'>Update</button>"."</td>";
         echo "</tr>";
     }
+    echo("            </tr>");
+    echo("        </table>");
+}*/
+
+if (isset($_POST['Student_Status1']))
+{
+    $id=$_POST['Student_Status1'];
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $qrss1="SELECT * FROM "."$DB_Table"."_Class_Obligation WHERE SubId='$id'";
+    $res19=mysqli_query($dbs_c, $qrss1);
+    S_S1($res19);
+}
+
+if (isset($_POST['Student_Status2']))
+{
+    $id=$_POST['Student_Status2'];
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $qrss2="SELECT * FROM "."$DB_Table"."_Discipline_Obligation WHERE SubId='$id'";
+    $res20=mysqli_query($dbs_c, $qrss2);
+    S_S2($res20);
+}
+
+if (isset($_POST['Student_Status3']))
+{
+    $id=$_POST['Student_Status3'];
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $qrss3="SELECT * FROM "."$DB_Table"."_Absenteeism WHERE SubId='$id'";
+    $res20=mysqli_query($dbs_c, $qrss3);
+    S_S1($res20);
+}
+
+if (isset($_POST['Student_Status5']))
+{
+    $id=$_POST['Student_Status5'];
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $qrss4="SELECT * FROM "."$DB_Table"."_Encouragement WHERE SubId='$id'";
+    $res21=mysqli_query($dbs_c, $qrss4);
+    S_S1($res21);
+}
+
+if (isset($_POST['Student_Status4']))
+{
+    $id=$_POST['Student_Status4'];
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $qrss4="SELECT * FROM "."$DB_Table"."_Delay WHERE SubId='$id'";
+    $res21=mysqli_query($dbs_c, $qrss4);
+    S_S3($res21);
+}
+
+if (isset($_POST['Student_Status6']))
+{
+    $id=$_POST['Student_Status6'];
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $qrss5="SELECT * FROM "."$DB_Table"."_Reminder WHERE SubId='$id'";
+    $res22=mysqli_query($dbs_c, $qrss5);
+    S_S1($res22);
 }
 
 if (isset($_POST['GD']))
@@ -77,8 +140,6 @@ if (isset($_POST['GD']))
     {
         echo"<option value='".$row['Expertise']."'>".$row['Expertise']."</option>";
     }
-
-
 }
 
 if (isset($_POST['NE']))

@@ -284,7 +284,7 @@ function Panel_A()
         A:
         $dbs_c=Connect_DB("Yes");
         global $DB_Table;
-        echo("<div class='Window3'>");
+        echo("<div class='Window3' id='Td_Table'>");
         echo("        <table class='table table-striped table-bordered' style='text-align: center' dir='rtl' id='Table_Data'>");
         echo("            <tr>");
         echo("                <th>نام</th>");
@@ -296,7 +296,7 @@ function Panel_A()
         echo("                <th>آدرس</th>");
         echo("                <th colspan='2'>تغییرات</th>");
         echo("            </tr>");
-        echo("            <tr id='Td_Table'>");
+        echo("            <tr>");
         $qr="SELECT * FROM "."$DB_Table"."_student ORDER BY Expertise";
         $rs1=mysqli_query($dbs_c, $qr);
         while ($row=mysqli_fetch_array($rs1))
@@ -350,34 +350,34 @@ function Panel_A()
                     <br>
                     <div align='center' class='col-sm-12'><<  لیست تعهدات درسی >></div>
                     <br>
-                    <div class='Tahodat_D'></div><br>
+                    <div class='Tahodat_D col-sm-12'></div><br>
                     <div class='col-sm-12'><hr></div>
                     <br>
                     <div align='center' class='col-sm-12'><<  لیست تعهدات انظباطی >></div>
                     <br>
-                    <div class='Tahodat_E'></div><br>
+                    <div class='Tahodat_E col-sm-12'></div><br>
                     <div class='col-sm-12'><hr></div>
                     <br>
                     <div align='center' class='col-sm-12'><<  لیست غیبت ها >></div>
                     <br>
-                    <div class='Ghrybatha'></div><br>
+                    <div class='Gheybatha col-sm-12'></div><br>
                     <div class='col-sm-12'><hr></div>
                     <br>
                     <div align='center' class='col-sm-12'><<  لیست تاخیر ها >></div>
                     <br>
-                    <div class='Takhirat'></div>
+                    <div class='Takhirat col-sm-12'></div>
                     <br>
                     <div class='col-sm-12'><hr></div>
                     <br>
                     <div align='center' class='col-sm-12'><<  لیست تشویق ها >></div>
                     <br>
-                    <div class='Tashvighat'></div>
+                    <div class='Tashvighat col-sm-12'></div>
                     <br>
                     <div class='col-sm-12'><hr></div>
                     <br>
                     <div align='center' class='col-sm-12'><<  لیست تذکر ها >></div>
                     <br>
-                    <div class='Tazakorat'></div> 
+                    <div class='Tazakorat col-sm-12'></div> 
                 </div>
             </div>
         ";
@@ -885,5 +885,69 @@ function Login_Time($idletime)
             header('location:Index.php');
         }
     }
+}
+
+function S_S2($ros)
+{
+    echo"<table class='table table-striped table-bordered' style='text-align: center'>";
+    echo"<tr>
+            <td class='T_H_T'>روز</td>
+            <td class='T_H_T'>تاریخ</td>
+            <td class='T_H_T'>زنگ چندم</td>
+            <td class='T_H_T'>ملاحضات</td>
+         </tr>";
+    while ($row=mysqli_fetch_array($ros))
+    {
+        echo"<tr>";
+        echo "<td>".$row['Day']."</td>";
+        echo "<td>".$row['Date']."</td>";
+        echo "<td>".$row['Rust']."</td>";
+        echo "<td>".$row['Note']."</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+
+}
+
+function S_S1($ros)
+{
+    echo"<table class='table table-striped table-bordered' style='text-align: center'>";
+    echo"<tr>
+            <td class='T_H_T'>روز</td>
+            <td class='T_H_T'>تاریخ</td>
+            <td class='T_H_T'>ملاحضات</td>
+         </tr>";
+    while ($row=mysqli_fetch_array($ros))
+    {
+        echo"<tr>";
+        echo "<td>".$row['Day']."</td>";
+        echo "<td>".$row['Date']."</td>";
+        echo "<td>".$row['Note']."</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+
+}
+
+function S_S3($ros)
+{
+    echo"<table class='table table-striped table-bordered' style='text-align: center'>";
+    echo"<tr>
+            <td class='T_H_T'>روز</td>
+            <td class='T_H_T'>تاریخ</td>
+            <td class='T_H_T'>چند ساعت</td>
+            <td class='T_H_T'>ملاحضات</td>
+         </tr>";
+    while ($row=mysqli_fetch_array($ros))
+    {
+        echo"<tr>";
+        echo "<td>".$row['Day']."</td>";
+        echo "<td>".$row['Date']."</td>";
+        echo "<td>".$row['Hour']."</td>";
+        echo "<td>".$row['Note']."</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+
 }
 ?>

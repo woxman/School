@@ -45,6 +45,13 @@ if (isset($_POST['Admins_Submit']))
     <script src=""></script>
     <link rel="stylesheet" href="Theme/Style-Js/Style.css">
     <title>پنل</title>
+    <script>
+        $(document).ready(function(){
+            $(".myBtn").click(function(){
+                $("#myModal").modal();
+            });
+        });
+    </script>
 </head>
 <body background="Contact/Image/Bg-1.jpg">
 <?php
@@ -139,13 +146,5 @@ if (isset($_SESSION['Login']))
         </div>
     </div>
 <!----------------------------------------Modal_Single_Update------------------------------------->
-<!--<div style="position: fixed;right: 46%;bottom: 0%"><a href="http://hekta.ir" style="text-decoration: none" target="_blank"><p style="color: antiquewhite;font-size: 20px">Power By Hekta</p></a></div>-->
-<script>
-    $(document).ready(function(){
-        $(".myBtn").click(function(){
-            $("#myModal").modal();
-        });
-    });
-</script>
 </body>
 </html>

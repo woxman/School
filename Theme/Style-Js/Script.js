@@ -55,9 +55,8 @@ $(document).ready(function(){
             success: function (data3) {
                     $('#myModal').modal('hide');
                     $("#Result_Tex").text(data3);
-                    //$("Form3 ").reset();
                     Animate_Box();
-                    Show_Data();
+                    setTimeout(function(){Refreshing();}, 3000);
             }
         });
         return false;
@@ -74,7 +73,7 @@ $(document).ready(function(){
                 success: function (data4) {
                     $("#Result_Tex").text(data4);
                     Animate_Box();
-                    Show_Data();
+                    setTimeout(function(){Refreshing();}, 3000);
                 }
             });
         }
@@ -253,9 +252,9 @@ $(document).ready(function(){
             type: 'post',
             url: 'Function/Routing.php',
             data: 'Student-List='+Group_School,
-            success: function (data11) {
+            success: function (data12) {
                 $('#Student-List2').children().remove();
-                $('#Student-List2').append(data11);
+                $('#Student-List2').append(data12);
             }
         });
     });
@@ -266,27 +265,94 @@ $(document).ready(function(){
             type: 'post',
             url: 'Function/Routing.php',
             data: 'Student-List-3='+Group_School,
-            success: function (data11) {
+            success: function (data13) {
                 $('#Student-List3').children().remove();
-                $('#Student-List3').append(data11);
+                $('#Student-List3').append(data13);
             }
         });
     });
 
-
+/*---------------------------Show Status----------------------------*/
     $('.Student_Name').on("change",function () {
         var Student_Name=$(".Student_Name").val();
-        alert(Student_Name);
         $.ajax({
             type: 'post',
             url: 'Function/Routing.php',
-            data: 'Student-List='+Group_School,
-            success: function (data11) {
-                $('#Student-List2').children().remove();
-                $('#Student-List2').append(data11);
+            data: 'Student_Status1='+Student_Name,
+            success: function (data14) {
+                $('.Tahodat_D').children().remove();
+                $('.Tahodat_D').append(data14);
             }
         });
     });
+
+    $('.Student_Name').on("change",function () {
+        var Student_Name=$(".Student_Name").val();
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: 'Student_Status2='+Student_Name,
+            success: function (data15) {
+                $('.Tahodat_E').children().remove();
+                $('.Tahodat_E').append(data15);
+            }
+        });
+    });
+
+    $('.Student_Name').on("change",function () {
+        var Student_Name=$(".Student_Name").val();
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: 'Student_Status3='+Student_Name,
+            success: function (data16) {
+                $('.Gheybatha').children().remove();
+                $('.Gheybatha').append(data16);
+            }
+        });
+    });
+
+    $('.Student_Name').on("change",function () {
+        var Student_Name=$(".Student_Name").val();
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: 'Student_Status4='+Student_Name,
+            success: function (data17) {
+                $('.Takhirat').children().remove();
+                $('.Takhirat').append(data17);
+            }
+        });
+    });
+
+    $('.Student_Name').on("change",function () {
+        var Student_Name=$(".Student_Name").val();
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: 'Student_Status5='+Student_Name,
+            success: function (data18) {
+                $('.Tashvighat').children().remove();
+                $('.Tashvighat').append(data18);
+            }
+        });
+    });
+
+    $('.Student_Name').on("change",function () {
+        var Student_Name=$(".Student_Name").val();
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: 'Student_Status6='+Student_Name,
+            success: function (data19) {
+                $('.Tazakorat').children().remove();
+                $('.Tazakorat').append(data19);
+            }
+        });
+    });
+
+/*---------------------------Show Status----------------------------*/
+
 //-----------------------Form_Submit----------------------------
 //-----------------------Function----------------------------
     function Animate_Box()
@@ -297,13 +363,13 @@ $(document).ready(function(){
 
     function Show_Data()
     {
-/*        $.ajax({
+       /* $.ajax({
             type: 'post',
             url: 'Function/Routing.php',
             data: 'TD=Tablee',
             success: function (data7) {
-                $('#Table_Data').children().remove();
-                $('#Table_Data').append(data7);
+                $('#Td_Table').children().remove();
+                $('#Td_Table').append(data7);
                 alert(data7)
             }
         });*/
@@ -339,6 +405,16 @@ $(document).ready(function(){
         });
 
         return false;
+    }
+
+    function Refreshing() {
+        var url = window.location.href;
+        if (url.indexOf('?') > -1){
+            url += '&param=1'
+        }else{
+            url += '?param=1'
+        }
+        window.location.href = url;
     }
 //-----------------------Function----------------------------
 });
