@@ -88,7 +88,7 @@ if (isset($_SESSION['Login']))
     ";
 }
 ?>
-<a href="http://Pendara.hekta.ir" target="_blank"><div id="Copy_Right">Pendara</div></a>
+<a href="http://Pendara.hekta.ir" target="_blank"><div id="Copy_Right" data-toggle="tooltip" data-placement="top" title="Hekta.ir">&copy; Pendara</div></a>
 <!-----------------------------------MassageBox_Result------------------------->
 <div id="Result_Box" class="alert-info"><p class="alert-link" id="Result_Tex"></p></div>
 <!-----------------------------------MassageBox_Result------------------------->
