@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3743fa9-30a1-4241-9730-45b9537256af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Function/Function.php" beforeDir="false" afterPath="$PROJECT_DIR$/Function/Function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Function/Routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/Function/Routing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Theme/Style-Js/Script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Theme/Style-Js/Script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Theme/Style-Js/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Theme/Style-Js/Style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="119" column="37" lean-forward="true" selection-start-line="119" selection-start-column="37" selection-end-line="119" selection-end-column="37" />
+            <state relative-caret-position="153">
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -77,7 +72,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Theme/Style-Js/Style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -152,10 +147,10 @@
         <option value="$PROJECT_DIR$/Install/Install.php" />
         <option value="$PROJECT_DIR$/Test.php" />
         <option value="$PROJECT_DIR$/Theme/Style-Js/Style.css" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Function/Routing.php" />
         <option value="$PROJECT_DIR$/Function/Function.php" />
         <option value="$PROJECT_DIR$/Theme/Style-Js/Script.js" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -265,12 +260,12 @@
       <workItem from="1557387505707" duration="1989000" />
       <workItem from="1557408402090" duration="9699000" />
       <workItem from="1557431078970" duration="3032000" />
-      <workItem from="1557466805818" duration="12215000" />
+      <workItem from="1557466805818" duration="12369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258173000" />
+    <option name="totallyTimeSpent" value="258327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -389,13 +384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="119" column="37" lean-forward="true" selection-start-line="119" selection-start-column="37" selection-end-line="119" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Function/Function.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -438,6 +426,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="26" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
         </state>
       </provider>
     </entry>

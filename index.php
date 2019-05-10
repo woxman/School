@@ -7,7 +7,7 @@ if (isset($_REQUEST['Log-Out']))
     session_destroy();
     header('location:Index.php');
 }
-Login_Time(10000);
+Login_Time(300);
 if (file_exists("Function/Config.php")) {
     if (file_exists("Install")) {
         Delete_Folder("Install");
