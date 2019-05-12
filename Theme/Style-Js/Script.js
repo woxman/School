@@ -13,7 +13,7 @@ $(document).ready(function(){
                     Animate_Box();
                 }else{
                     $("#Result_Tex").text(data1);
-                    //$("Form1 ").reset();
+                    document.getElementById("Form1").reset();
                     Animate_Box();
                     Show_Data();
                 }
@@ -33,7 +33,7 @@ $(document).ready(function(){
                     Animate_Box();
                 }else{
                     $("#Result_Tex").text(data2);
-                    //$("Form2 ").reset();
+                    document.getElementById("Form2").reset()
                     Animate_Box();
                     Show_Data();
                 }
@@ -91,7 +91,7 @@ $(document).ready(function(){
                 $("#Result_Tex").text(data5);
                 Animate_Box();
                 $("#Result_Tex").text(data5);
-                //Reset New_Expertises
+                document.getElementById("Form4").reset();
                 Show_Data();
             }
         });
@@ -108,6 +108,7 @@ $(document).ready(function(){
                 data: 'Group_Delete='+Group_Del,
                 success: function (data6) {
                     $("#Result_Tex").text(data6);
+                    document.getElementById("Form5").reset();
                     Animate_Box();
                     Show_Data();
                 }
@@ -150,7 +151,7 @@ $(document).ready(function(){
             data: $('#Form6').serialize(),
             success: function (Th) {
                 $("#Result_Tex").text(Th);
-                //$("Form6 ").reset();
+                document.getElementById("Form6").reset();
                 Animate_Box();
                 Show_Data();
             }
@@ -165,7 +166,7 @@ $(document).ready(function(){
             data: $('#Form7').serialize(),
             success: function (Gh) {
                 $("#Result_Tex").text(Gh);
-                //$("Form7 ").reset();
+                document.getElementById("Form7").reset();
                 Animate_Box();
                 Show_Data();
             }
@@ -180,7 +181,7 @@ $(document).ready(function(){
             data: $('#Form8').serialize(),
             success: function (TSH) {
                 $("#Result_Tex").text(TSH);
-                //$("Form8 ").reset();
+                document.getElementById("Form8").reset();
                 Animate_Box();
                 Show_Data();
             }
@@ -195,7 +196,7 @@ $(document).ready(function(){
             data: $('#Form9').serialize(),
             success: function (TKH) {
                 $("#Result_Tex").text(TKH);
-                //$("Form9 ").reset();
+                document.getElementById("Form9").reset();
                 Animate_Box();
                 Show_Data();
             }
@@ -210,7 +211,7 @@ $(document).ready(function(){
             data: $('#Form10').serialize(),
             success: function (DR) {
                 $("#Result_Tex").text(DR);
-                //$("Form10 ").reset();
+                document.getElementById("Form10").reset();
                 Animate_Box();
                 Show_Data();
             }
@@ -225,7 +226,7 @@ $(document).ready(function(){
             data: $('#Form11').serialize(),
             success: function (EN) {
                 $("#Result_Tex").text(EN);
-                //$("Form11 ").reset();
+                document.getElementById("Form11").reset();
                 Animate_Box();
                 Show_Data();
             }

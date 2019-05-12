@@ -35,6 +35,7 @@ if (isset($_POST['Admins_Submit']))
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
     <link rel="stylesheet" href="Theme/Freamwork/bootstrap.min.css">
     <link rel="stylesheet" href="Theme/Date-Picker/persianDatepicker-default.css">
     <script src="Theme/Freamwork/jquery.min.js"></script>

@@ -137,7 +137,7 @@ function Single_Delete($di)
     mysqli_query($dbs_c,$qt5);
     mysqli_query($dbs_c,$qt6);
     mysqli_query($dbs_c,$qt7);
-    return("آیتم انتخوابی با موفقیت پاک شد");
+    return("آیتم انتخابی با موفقیت پاک شد");
 }
 
 function Multi_Update($Now_Ex,$New_Ex)
