@@ -636,6 +636,7 @@ function Panel_A()
 
 function Check_Database($Name_DB,$UserName_DB,$Password_DB,$Host_DB,$UserName_Admin,$Pssword_Admin,$Table_DB)
 {
+    error_reporting(0);
     $Host=$Host_DB;
     $User=$UserName_DB;
     $Pass=$Password_DB;
@@ -646,15 +647,19 @@ function Check_Database($Name_DB,$UserName_DB,$Password_DB,$Host_DB,$UserName_Ad
     $dbs1=mysqli_connect($Host,$User,$Pass,$Name);
     if ($dbs1)
     {
-        Replay_Contact($Table_DB);
-        Create_Config_File($Host,$Name,$User,$Pass,$Table_DB);
-        $dbs_c=Connect_DB("No");
-        global $DB_Table;
-        Import_DB();
-        $qra="INSERT INTO "."$DB_Table"."_admin(UserName, Password)
-             VALUES('$Admin', '$Admin_Pass')";
-        mysqli_query($dbs_c, $qra);
-        return("SucsessFul");
+        if ($Admin != "" && $Admin_Pass != "") {
+            Replay_Contact($Table_DB);
+            Create_Config_File($Host,$Name,$User,$Pass,$Table_DB);
+            $dbs_c=Connect_DB("No");
+            global $DB_Table;
+            Import_DB();
+            $qra="INSERT INTO "."$DB_Table"."_admin(UserName, Password)
+                 VALUES('$Admin', '$Admin_Pass')";
+            mysqli_query($dbs_c, $qra);
+            return("SucsessFul");
+        }else{
+            return("لطفا مشخصات ورود مدیریت را کامل کنید");
+        }
     }else{
         return("اطلاعات وارد شده نادرس میباشد!");
     }
