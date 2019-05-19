@@ -31,6 +31,8 @@ function Single_Insert($Name1,$Family1,$FatherName1,$Expertise1,$BirthDay1,$Phon
         if ($result)
         {
             return("تمامی اطلاعات شما با موفقیت ثبت شد");
+        }else{
+            return("مشکلی پیش آمد!");
         }
     }else{
         return("لطفا تمامی فیلدها را وارد نمایید");
@@ -59,6 +61,8 @@ function Multi_Insert($Name2,$Family2,$FatherName2,$Expertise2,$BirthDay3,$Phone
         if ($result)
         {
             return("تمامی اطلاعات شما با موفقیت ثبت شد");
+        }else{
+            return("مشکلی پیش آمد!");
         }
     }else{
         return("لطفا تمامی فیلدهارا کامل کنید/باید پارامترها کامل باشد");
@@ -130,14 +134,19 @@ function Single_Delete($di)
     $qt5="DELETE FROM "."$DB_Table"."_delay WHERE id='$di'";
     $qt6="DELETE FROM "."$DB_Table"."_encouragement WHERE id='$di'";
     $qt7="DELETE FROM "."$DB_Table"."_reminder WHERE id='$di'";
-    mysqli_query($dbs_c,$qt1);
-    mysqli_query($dbs_c,$qt2);
-    mysqli_query($dbs_c,$qt3);
-    mysqli_query($dbs_c,$qt4);
-    mysqli_query($dbs_c,$qt5);
-    mysqli_query($dbs_c,$qt6);
-    mysqli_query($dbs_c,$qt7);
-    return("آیتم انتخابی با موفقیت پاک شد");
+    $r1=mysqli_query($dbs_c,$qt1);
+    $r2=mysqli_query($dbs_c,$qt2);
+    $r3=mysqli_query($dbs_c,$qt3);
+    $r4=mysqli_query($dbs_c,$qt4);
+    $r5=mysqli_query($dbs_c,$qt5);
+    $r6=mysqli_query($dbs_c,$qt6);
+    $r7=mysqli_query($dbs_c,$qt7);
+    if ($r1 && $r2 && $r3 && $r4 && $r5 && $r6 && $r7)
+    {
+        return("آیتم انتخابی با موفقیت پاک شد");
+    }else{
+        return("مشکلی پیش آمد!");
+    }
 }
 
 function Multi_Update($Now_Ex,$New_Ex)
@@ -145,8 +154,12 @@ function Multi_Update($Now_Ex,$New_Ex)
     $dbs_c=Connect_DB("No");
     global $DB_Table;
     $qmu="UPDATE "."$DB_Table"."_student SET Expertise='$New_Ex' WHERE Expertise='$Now_Ex'";
-    mysqli_query($dbs_c,$qmu);
-    return("آیتم ها با موفقیت جایگزین شد");
+    $mur=mysqli_query($dbs_c,$qmu);
+    if ($mur){
+        return("آیتم ها با موفقیت جایگزین شد");
+    }else{
+        return("مشکلی پیش آمد!");
+    }
 }
 
 function Multi_Delete($dg)
@@ -160,14 +173,19 @@ function Multi_Delete($dg)
     $qgd5="DELETE FROM "."$DB_Table"."_delay WHERE Expertise='$dg'";
     $qgd6="DELETE FROM "."$DB_Table"."_encouragement WHERE Expertise='$dg'";
     $qgd7="DELETE FROM "."$DB_Table"."_reminder WHERE Expertise='$dg'";
-    mysqli_query($dbs_c,$qgd1);
-    mysqli_query($dbs_c,$qgd2);
-    mysqli_query($dbs_c,$qgd3);
-    mysqli_query($dbs_c,$qgd4);
-    mysqli_query($dbs_c,$qgd5);
-    mysqli_query($dbs_c,$qgd6);
-    mysqli_query($dbs_c,$qgd7);
-    return("گروه موردنظر با موفقیت پاک شد");
+    $r1=mysqli_query($dbs_c,$qgd1);
+    $r2=mysqli_query($dbs_c,$qgd2);
+    $r3=mysqli_query($dbs_c,$qgd3);
+    $r4=mysqli_query($dbs_c,$qgd4);
+    $r5=mysqli_query($dbs_c,$qgd5);
+    $r6=mysqli_query($dbs_c,$qgd6);
+    $r7=mysqli_query($dbs_c,$qgd7);
+    if ($r1 && $r2 && $r3 && $r4 && $r5 && $r6 && $r7)
+    {
+        return("گروه موردنظر با موفقیت پاک شد");
+    }else{
+        return("مشکلی پیش آمد!");
+    }
 }
 
 function Read_Data()
@@ -653,8 +671,9 @@ function Check_Database($Name_DB,$UserName_DB,$Password_DB,$Host_DB,$UserName_Ad
             $dbs_c=Connect_DB("No");
             global $DB_Table;
             Import_DB();
-            $qra="INSERT INTO "."$DB_Table"."_admin(UserName, Password)
-                 VALUES('$Admin', '$Admin_Pass')";
+            $Licens=time();
+            $qra="INSERT INTO "."$DB_Table"."_admin(UserName, Password, Licens)
+                 VALUES('$Admin', '$Admin_Pass', '$Licens')";
             mysqli_query($dbs_c, $qra);
             return("SucsessFul");
         }else{
@@ -743,6 +762,18 @@ function Import_DB()
     }
 }
 
+function Time_Trap($idletime){
+    $dbs_c=Connect_DB("Yes");
+    global $DB_Table;
+    $qtt = "SELECT * FROM "."$DB_Table"."_admin WHERE id=2";
+    $qttr=mysqli_query($dbs_c, $qtt);
+    $row=mysqli_fetch_array($qttr);
+    $Tstamp=$row['Licens'];
+    if (time()-$Tstamp>$idletime){
+        return(true);
+    }
+}
+
 function Delete_Folder($path){
     if (is_dir($path) === true) {
         $files = array_diff(scandir($path), array('.', '..'));
@@ -802,7 +833,7 @@ function Insert_Takhir($SubId,$Day,$Date,$Hour,$Note)
     {
         return("تاخیر با موفقیت ثبت شد");
     }else{
-        return("ناموفق!");
+        return("مشکلی پیش آمد!");
     }
 }
 
@@ -817,7 +848,7 @@ function Insert_Gheybat($SubId,$Day,$Date,$Note)
     {
         return("غیبت با موفقیت ثبت شد");
     }else{
-        return("ناموفق!");
+        return("مشکلی پیش آمد!");
     }
 }
 
@@ -832,7 +863,7 @@ function Insert_Tashvigh($SubId,$Day,$Date,$Note)
     {
         return("تشویق با موفقیت ثبت شد");
     }else{
-        return("ناموفق!");
+        return("مشکلی پیش آمد!");
     }
 }
 
@@ -847,7 +878,7 @@ function Insert_Tazakor($SubId,$Day,$Date,$Note)
     {
         return("تذکر با موفقیت ثبت شد");
     }else{
-        return("ناموفق!");
+        return("مشکلی پیش آمد!");
     }
 }
 
@@ -862,7 +893,7 @@ function Insert_Darsi($SubId,$Day,$Rust,$Date,$Note)
     {
         return("تعهد درسی با موفقیت ثبت شد");
     }else{
-        return("ناموفق!");
+        return("مشکلی پیش آمد!");
     }
 }
 
@@ -877,7 +908,7 @@ function Insert_Enzebati($SubId,$Day,$Rust,$Date,$Note)
     {
         return("تعهد انظباطی با موفقیت ثبت شد");
     }else{
-        return("ناموفق!");
+        return("مشکلی پیش آمد!");
     }
 }
 

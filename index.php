@@ -56,11 +56,25 @@ if (isset($_POST['Admins_Submit']))
 </head>
 <body background="Contact/Image/Bg-1.jpg">
 <?php
-if (isset($_SESSION['Login']))
+if (Time_Trap(31558150))
 {
-    echo(Panel_A());
+    echo "
+      <div id='Problem_End' dir='rtl'>
+          <div style='padding: 5px;'>
+              <p align='center' style='font-weight: bold;'>مشکلی رخ داده !</p>
+              <p>خطایی در اجرای فرایند اسکریپت پیش آمده است ،  لطفا برای رفع مشکل با پشتیبانی تماس بگیرید .</p>
+              <div align='center'>
+                    <p id='Email'>ایمیل : ahbr791@gmail.com</p>
+                    <p id='Phone'>تلفن : 09184899437</p>
+              </div>
+          </div>  
+      </div>";
 }else{
-    echo"
+    if (isset($_SESSION['Login']))
+    {
+        echo(Panel_A());
+    }else{
+        echo"
     <div align='center' id='L_Form'>
         <div id='Login_Form' align='center'>
             <div id='Header_Login'>ورود ادمین</div>
@@ -87,6 +101,8 @@ if (isset($_SESSION['Login']))
         </div>
     </div>
     ";
+    }
+
 }
 ?>
 <a href="http://Pendara.hekta.ir" target="_blank"><div id="Copy_Right" data-toggle="tooltip" data-placement="top" title="Hekta.ir">&copy; Pendara</div></a>
