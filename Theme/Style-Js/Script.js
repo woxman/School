@@ -287,6 +287,21 @@ $(document).ready(function(){
         });
     });
 
+    $('.Enzebat-Class').on("change",function () {
+        var Enzebat_Group=$(".Enzebat-Class").val();
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: 'Enzebat-Class='+Enzebat_Group,
+            success: function (EnzGr) {
+                $('#Return_Enzebats').children().remove();
+                $('#Return_Enzebats').append(EnzGr);
+                $('#Print_Status_Btn2').css("display","block");
+            }
+        });
+    });
+
+
 /*---------------------------Show Status----------------------------*/
     $('.Student_Name').on("change",function () {
         var Student_Name=$(".Student_Name").val();
@@ -362,7 +377,7 @@ $(document).ready(function(){
             success: function (data19) {
                 $('.Tazakorat').children().remove();
                 $('.Tazakorat').append(data19);
-                $('#Print_Status_Btn').css("display","block");
+                $('#Print_Status_Btn1').css("display","block");
             }
         });
     });
@@ -374,11 +389,11 @@ $(document).ready(function(){
             data: 'Enzebat='+Student_Name,
             success: function (Enzebat) {
                 if (Enzebat>20){
-                    Enzebat=20+" "+"( دانش آموز منظم)  ";
+                    Enzebat=" "+20+"+ "+"( دانش آموز کوشا )  ";
                 }
                 $('.Nomre_Enzebat').children().remove();
                 $('.Nomre_Enzebat').append("<p>"+Enzebat+"</p>");
-                $('#Print_Status_Btn').css("display","block");
+                $('#Print_Status_Btn1').css("display","block");
             }
         });
     });
@@ -460,11 +475,22 @@ $(document).ready(function(){
     }
 
 //-----------------------Function----------------------------
-    $('#Print_Status_Btn').on('click',function(){
-        $('#Header_None_Print').css("display","none");
-        $('#Print_Status_Btn').css("display","none");
-        $("#Print1").printMe({ "path": ["Theme/Style-Js/Style.css"], "title": "<link rel='stylesheet' href='Theme/Freamwork/bootstrap.min.css'><p align='center'><< وضعیت دانش آموز >></p>"});
-        $('#Header_None_Print').css("display","block");
-        $('#Print_Status_Btn').css("display","block");
-    })
+
+// -----------------------Printing----------------------------
+    $('#Print_Status_Btn1').on('click',function(){
+        $('#Header_None_Print1').css("display","none");
+        $('#Print_Status_Btn1').css("display","none");
+        $("#Print1").printMe({ "path": ["Theme/Style-Js/Style.css"], "title": "<link rel='stylesheet' href='Theme/Freamwork/bootstrap.min.css'><p align='center' style='font-size: 20px;margin-left: 160px'> نمره انظباط   "+$('#Student-List3').text()+"</p>"});
+        $('#Header_None_Print1').css("display","block");
+        $('#Print_Status_Btn1').css("display","block");
+    });
+
+    $('#Print_Status_Btn2').on('click',function(){
+        $('#Header_None_Print2').css("display","none");
+        $('#Print_Status_Btn2').css("display","none");
+        $("#Print2").printMe({ "path": ["Theme/Style-Js/Style.css"], "title": "<link rel='stylesheet' href='Theme/Freamwork/bootstrap.min.css'><p align='center' style='font-size: 20px;margin-left: 160px'> نمرات انظباط کلاس  "+$('#Class-List1').val()+"</p>"});
+        $('#Header_None_Print2').css("display","block");
+        $('#Print_Status_Btn2').css("display","block");
+    });
+// -----------------------Printing----------------------------
 });

@@ -362,16 +362,14 @@ function Panel_A()
             <div id='Print1'>
                 <div class='Window3' dir='rtl'>
                     <div class='row'>
-                        <div id='Header_None_Print' class='col-sm-10'>
+                        <div id='Header_None_Print1' class='col-sm-10'>
                             <label for='Class-List3' class='col-sm-2'>کلاس : </label>
                             <select id='Class-List3' class='Class-List custom-select col-sm-3'></select>
                             <label for='Student-List3' class='col-sm-3'>دانش آموز : </label>
                             <select id='Student-List3' name='Student-List1' class='custom-select col-sm-3 Student_Name'></select>                      
                         </div>
                         <br>
-                        <div class='col-sm-12' align='center'><br><button class='btn btn-secondary' id='Print_Status_Btn' style='display: none'>پرینت وضعیت</button></div>
-                        <br>
-                        <div class='col-sm-12'><hr></div>
+                        <div class='col-sm-12' align='center'><br><button class='btn btn-secondary' id='Print_Status_Btn1' style='display: none'>پرینت وضعیت</button></div>
                         <br>
                         <div align='left' class='col-sm-6'>نمره انظباط :</div>
                         <br>
@@ -414,10 +412,19 @@ function Panel_A()
         ";
     }elseif(isset($_REQUEST['Status2'])){
         echo "<div id='Print2'>
-                <div class='Window1'></div>
+                <div class='Window1'>
+                    <div class='row' id='Header_None_Print2'>
+                        <label for='Class-List1' class='col-sm-4'>کلاس : </label>
+                        <select id='Class-List1' class='Class-List custom-select col-sm-6 Enzebat-Class'></select>
+                        <div class='col-sm-2'></div>
+                        <br>
+                    </div>
+                    <div class='col-sm-12' align='center'><br><button class='btn btn-secondary' id='Print_Status_Btn2' style='display: none'>پرینت انظباط کلاس</button></div>
+                    <br>
+                    <table id='Return_Enzebats' class='table table-striped table-bordered' style='text-align: center'></table>
+                </div>
               </div>";
     }elseif(isset($_REQUEST['Score'])){
-        Get_Count_Data(58);
         echo "
         <div class='Window1'>
             <div align='center'><< فرم تنظیم کاهش نمره برای هر بخش >></div><br>
@@ -1146,6 +1153,6 @@ function Get_Count_Data($id)
         array_push($arrp,$Tdc);
     }
     $result=Computing($arrp[1]['total'],$arrp[3]['total'],$arrp[4]['total'],$arrp[5]['total'],$arrp[2]['total'],$arrp[0]['total']);
-    echo ($result);
+    return($result);
 }
 ?>

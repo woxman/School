@@ -269,4 +269,30 @@ if (isset($_POST['Enzebat']))
     echo($res21);
 }
 
+if (isset($_POST['Enzebat-Class']))
+{
+    $Class=$_POST['Enzebat-Class'];
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $Takh="SELECT * FROM "."$DB_Table"."_student WHERE Expertise='$Class'";
+    $query=mysqli_query($dbs_c, $Takh);
+    $arr_Na_Fa=array();
+    $arr_SubId=array();
+    $arr_Score=array();
+    while ($row=mysqli_fetch_array($query))
+    {
+        $Person=$row['Name']." ".$row['Family'];
+        array_push($arr_Na_Fa,$Person);
+        array_push($arr_SubId,$row['id']);
+    }
+    echo("<tr><td class='T_H_T'>نام و نام خانوادگی</td><td class='T_H_T'>انظباط</td></tr>");
+    for ($i=0;$i<count($arr_SubId);$i++)
+    {
+        $Score=Get_Count_Data($arr_SubId[$i]);
+        if ($Score>20){
+            $Score=" ( دانش آموز کوشا ) +20";
+        }
+        echo("<tr><td>".$arr_Na_Fa[$i]."</td><td dir='ltr'>".$Score."</td></tr>");
+    }
+}
 ?>
