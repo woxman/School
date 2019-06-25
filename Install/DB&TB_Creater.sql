@@ -77,14 +77,14 @@ CREATE TABLE IF NOT EXISTS `new_class_obligation` (
 
 CREATE TABLE IF NOT EXISTS `new_decrease_score` (
   `Title` varchar(5) COLLATE utf8_persian_ci NOT NULL,
-  `Value` float NOT NULL
+  `Valuee` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
 -- Dumping data for table `new_decrease_score`
 --
 
-INSERT INTO `new_decrease_score` (`Title`, `Value`) VALUES
+INSERT INTO `new_decrease_score` (`Title`, `Valuee`) VALUES
 ('Ghey', 0.25),
 ('Takh', 0.25),
 ('Taz', 0.25),
