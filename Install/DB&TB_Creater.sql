@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2019 at 03:30 PM
+-- Generation Time: Jun 24, 2019 at 06:02 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `ahbr`
+-- Database: `new`
 --
 
 -- --------------------------------------------------------
@@ -167,6 +167,21 @@ CREATE TABLE IF NOT EXISTS `new_student` (
   `Address` varchar(255) COLLATE utf8_persian_ci NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `new_record`
+--
+
+CREATE TABLE IF NOT EXISTS `new_record` (
+  `id` int(50) NOT NULL,
+  `Day` varchar(20) COLLATE utf8_persian_ci NOT NULL,
+  `Date` date NOT NULL,
+  `Item` varchar(100) COLLATE utf8_persian_ci NOT NULL,
+  `Note` varchar(250) COLLATE utf8_persian_ci NOT NULL,
+  `SubId` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
+
 --
 -- Indexes for dumped tables
 --
@@ -226,6 +241,12 @@ ALTER TABLE `new_student`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `new_record`
+--
+ALTER TABLE `new_record`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -269,6 +290,11 @@ ALTER TABLE `new_reminder`
 --
 ALTER TABLE `new_student`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
+--
+-- AUTO_INCREMENT for table `new_record`
+--
+ALTER TABLE `new_record`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

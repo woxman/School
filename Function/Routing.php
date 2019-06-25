@@ -221,6 +221,11 @@ if (isset($_POST['Day-Enzebati']))
     $res18=Insert_Enzebati($_POST['Student-List2'],$_POST['Day-Enzebati'],$_POST['Rust-Enzebati'],$_POST['Date-Enzebati'],$_POST['Note-Enzebati']);
     echo($res18);
 }
+if (isset($_POST['Day-Record']))
+{
+    $res23=Insert_Record($_POST['Student-List1'],$_POST['Day-Record'],$_POST['Date-Record'],$_POST['Item-Record'],$_POST['Note-Record']);
+    echo($res23);
+}
 if (isset($_POST['Get_Setting']))
 {
     switch ($_POST['Get_Setting'])
@@ -269,12 +274,23 @@ if (isset($_POST['Enzebat']))
     echo($res21);
 }
 
+if (isset($_POST['Rec_Show'])){
+    $RecG=$_POST['Rec_Show'];
+    $dbs_c=Connect_DB("No");
+    global $DB_Table;
+    $Recco="SELECT * FROM "."$DB_Table"."_Record WHERE SubId='$RecG'";
+    $queryr=mysqli_query($dbs_c, $Recco);
+    echo("<tr><td class='T_H_T'>روز</td><td class='T_H_T'>تاریخ</td><td class='T_H_T'>سابقه</td><td class='T_H_T'>یادداشت</td></tr>");
+    while ($row=mysqli_fetch_array($queryr)){
+        echo("<tr><td>".$row['Day']."</td><td>".$row['Date']."</td><td>".$row['Item']."</td><td>".$row['Note']."</td></tr>");
+    }
+}
 if (isset($_POST['Enzebat-Class']))
 {
     $Class=$_POST['Enzebat-Class'];
     $dbs_c=Connect_DB("No");
     global $DB_Table;
-    $Takh="SELECT * FROM "."$DB_Table"."_student WHERE Expertise='$Class'";
+    $Takh="SELECT * FROM "."$DB_Table"."_student WHERE Expertise='$Class '";
     $query=mysqli_query($dbs_c, $Takh);
     $arr_Na_Fa=array();
     $arr_SubId=array();

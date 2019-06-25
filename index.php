@@ -1,13 +1,14 @@
 <?php
 session_start();
 require_once "Function/Function.php";
+require_once "Function/Panel.php";
 $msg_log="";
 if (isset($_REQUEST['Log-Out']))
 {
     session_destroy();
     header('location:Index.php');
 }
-Login_Time(900);
+Login_Time(1200);
 if (file_exists("Function/Config.php")) {
     if (file_exists("Install")) {
         Delete_Folder("Install");
@@ -40,6 +41,7 @@ if (isset($_POST['Admins_Submit']))
     <link rel="stylesheet" href="Theme/Date-Picker/persianDatepicker-default.css">
     <script src="Theme/Freamwork/jquery.min.js"></script>
     <script src="Theme/Print/jquery-printme.js"></script>
+    <script src="Theme/Freamwork/popper.min.js"></script>
     <script src="Theme/Freamwork/bootstrap.min.js"></script>
     <script src="Theme/Style-Js/Script.js"></script>
     <script src="Theme/Date-Picker/persianDatepicker.js"></script>
@@ -51,6 +53,10 @@ if (isset($_POST['Admins_Submit']))
             $(".myBtn").click(function(){
                 $("#myModal").modal();
             });
+            /*************************/
+            $(".dropdown-toggle").dropdown();
+            /*************************/
+
         });
     </script>
 </head>

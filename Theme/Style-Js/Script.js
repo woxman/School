@@ -234,6 +234,20 @@ $(document).ready(function(){
         return false;
     });
 
+    $('#Record-Form').bind('submit', function () {
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: $('#Record-Form').serialize(),
+            success: function (Rec) {
+                $("#Result_Tex").text(Rec);
+                document.getElementById("Record-Form").reset();
+                Animate_Box();
+                Show_Data();
+            }
+        });
+        return false;
+    });
     $('#Form_Setting').bind('submit', function () {
         $.ajax({
             type: 'post',
@@ -257,6 +271,20 @@ $(document).ready(function(){
             success: function (data11) {
                 $('#Student-List1').children().remove();
                 $('#Student-List1').append(data11);
+            }
+        });
+    });
+
+    $('.Class-List-Rec').on("change",function () {
+        var Rec=$(".Class-List-Rec").val();
+        $.ajax({
+            type: 'post',
+            url: 'Function/Routing.php',
+            data: 'Rec_Show='+Rec,
+            success: function (Recc) {
+                alert(Recc);
+                $('#Return_Records').children().remove();
+                $('#Return_Records').append(Recc);
             }
         });
     });
@@ -450,7 +478,7 @@ $(document).ready(function(){
             }
         });
 
-        for(i=0;i<=5;i++)
+        for(var i=0;i<=5;i++)
         {
             $.ajax({
                 type: 'post',
